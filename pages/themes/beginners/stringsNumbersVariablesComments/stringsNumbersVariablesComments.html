@@ -72,6 +72,8 @@
 	</section>
 </section>
 
+
+<section data-min="5"><h1>What's in a program</h1></section>
 <section><h2>What's in a program</h2>
 	<dt>If we make an analogy with a natural language:
 		<table style="margin-left: 1em">
@@ -117,7 +119,8 @@
 	</dl>
 </section>
 
-<section><h2>Data Types?</h2>
+<section data-min="5"><h1>Data Types Introduction</h1></section>
+<section><h2>Data Types Introduction</h2>
 	<dl class="fa">
 		<dt>Programming is about manipulating <b>data</b></dt>
 		<dt>Each programming language defines its data types and the corresponding operations which can be performed on each data type.</dt>
@@ -125,6 +128,7 @@
 	</dl>
 </section>
 
+<section data-min="10"><h1>Number data Type</h1></section>
 <section><h2>Number data Type</h2>
 	<section>
 		<dl class="fa">
@@ -137,8 +141,11 @@
 	<section><h3>integer numbers</h3>
 		<p>we can use positive and negative integers:</p>
 		<pre><code rel="Python" class="python">
+			# positive integer literal:
 			>>> 42
 			42
+
+			# negative integer literal:
 			>>> -42
 			-42
 		</code></pre>
@@ -148,8 +155,11 @@
 		<pre><code rel="Python" class="python">
 			>>> 3.1234
 			3.1234
+
 			>>> -0.255
 			-0.255
+
+			# leading zero can be skipped:
 			>>> .44
 			0.44
 			>>> -.55
@@ -159,7 +169,8 @@
 	</section>
 	<section><h3>arithmetic operations</h3>
 		<dl class="fa">
-			<dt><a href="https://www.programiz.com/python-programming/operators#arithmetic">Arithmetic operators</a> @programiz.com</dt>
+			<dt>Python supports the standard arithmetic operations:</dt>
+			<dd><a href="https://docs.python.org/3/library/stdtypes.html?highlight=arithmetic%20operation#numeric-types-int-float-complex">Numeric Types</a>@python docs</dd>
 		</dl>
 		<p class="note">The division operator "<code>/</code>" in python2 returns the integer part(i.e. works like Floor division), while in python3 it returns the float result</p>
 	</section>
@@ -217,6 +228,7 @@
 	</section>
 </section>
 
+<section data-min="20"><h1>Strings in Python</h1></section>
 <section><h2>Strings in Python</h2>
 	<section><h3>definition</h3>
 		<dl class="fa">
@@ -255,6 +267,7 @@
 	</section>
 </section>
 
+<section data-min="10"><h1>Strings operations</h1></section>
 <section><h2>Strings operations</h2>
 	<section><h3>concatenation: <code>+</code></h3>
 		<p>The operation is defined only on <span class="note">same data types</span>, I.e. Python can not concatenate apples with oranges:</p>
@@ -299,12 +312,20 @@
 	</section>
 </section>
 
+<section data-min="5"><h1>Variables</h1></section>
 <section><h2>Variables</h2>
 	<section><h3>What are they?</h3>
 		<dl class="fa">
 			<dt>A names for "containers" (placed in RAM) in which values can be stored</dt>
 			<dt>We can <b>set</b> values in a variable, i.e. to <b>write</b> a value into the corresponding container.</dt>
 			<dt>We can <b>get</b> the variable value, i.e. to <b>read</b> the content of the corresponding container</dt>
+		</dl>
+	</section>
+	<section><h3>Identifiers rules and conventions</h3>
+		<dl class="fa">
+			<dt>Variables names should follow next rules:</dt>
+			<dd>Start with letter(i.e. [A-Z] or [a-z]) or underscore</dd>
+			<dd>Followed by zero or more letters, underscores and digits </dd>
 		</dl>
 	</section>
 	<section><h3>example</h3>
@@ -327,6 +348,7 @@
 	</section>
 </section>
 
+<section data-min="5"><h1>Comments</h1></section>
 <section><h2>Comments</h2>
 	<section><h3>Why to comment our code?</h3>
 		<dl class="fa">
