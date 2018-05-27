@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>modulesAndPackages</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <!-- css & themes include -->
+  <link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/dark.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC2-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC2-Python/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <!-- CUSTOM -->
+  <base target="_blank">
+</head>
+<body>
+  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+    <div class="top_links">
+      <a class="home_link" href="/ProgressBG-VC2-Python/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+      <div class="help_text">
+        <div><span>N/Спейс</span><span>следващ слайд</span></div>
+        <div><span>P</span><span>предишен слайд</span></div>
+        <div><span>O</span><span>всички слайдове</span></div>
+        <div><span>ctrl+left click</span><span>увеличава елемента</span></div>
+      </div>
+    </div>
+    <div class="footer theme_switch">
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
+    </div>
+    <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Organizing code: more on importing modules</h1></section>
+<section data-transition="zoom">
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+  <section class="copyright" data-transition="zoom">
+    <div class="note">
+      <p>Created for</p>
+    </div>
+    <div class="company">
+      <a href="http://progressbg.net/програмиране-с-python-2/">
+      <img style="height:80%" src="/ProgressBG-VC2-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
+      </a>
+    </div>
+    <div class="author">
+      <span class="note">Iva E. Popova, 2018,</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
+  <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+    <div class="company">
+       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+    </div>
+  </section>
+</section>
+
+<section><h1>Modules in Python</h1></section>
+<section><h2>Modules in Python</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>Modules allows to split a long program into several files</dt>
+      <dd>for instance - to put function/class definitions in one or more files, and the main program to be written in a separate file.</dd>
+    </dl>
+  </section>
+  <section><h3>Python modules</h3>
+    <dl class="fa">
+      <dt class="note">Module == Python file</dt>
+      <dt>Each module creates its own namespace.</dt>
+      <dt>A module can contain definitions, as well as executable statements</dt>
+    </dl>
+  </section>
+  <section><h3>Creating a custom Python module</h3>
+    <p>Its just simple as creating a Python file - do not forget the <span class="note">.py extension</span></p>
+    <pre><code rel="Terminal" class="shell" data-noescape>
+      ├── my_app
+      │   ├── app.py           # the main file
+      │   ├── helper_module.py # a module file
+    </code></pre>
+  </section>
+  <section><h3>Import module: <code class="note">import <em>X</em></code></h3>
+    <dl class="fa">
+      <dt>To use a module, you have to import it first.</dt>
+      <dt>As a module generates its own namespace, you have to prefix the imported names with the module name:</dt>
+      <pre><code rel="app.py" class="python">
+        # import the helper_module:
+        import helper_module
+
+        # use helper_module
+        user_name = helper_module.get_user_name()
+        helper_module.greet(user_name)
+      </code></pre>
+    </dl>
+  </section>
+  <section><h3>Module alias: <code class="note">import X as Y</code></h3>
+    <dt>You can give modules names a shorter aliases:</dt>
+    <pre><code rel="Python" class="python">
+      import helper_module as hm
+
+      user_name = hm.get_user_name()
+      hm.greet(user_name)
+    </code></pre>
+  </section>
+  <section><h3>Import object from module: <code class="note">from X import Y</code></h3>
+    <dl class="fa">
+      <dt>You can import an object from module, using the <br> <code class="note">from X import Y</code> notation. After that, you can use the name (Y), without having to prefixing it.</dt>
+      <dt>You can import more that one object, if you separate them with comma</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      from helper_module import get_user_name, greet
+
+      user_name = get_user_name()
+      greet(user_name)
+    </code></pre>
+  </section>
+  <section><h3>Import object from module: <code class="note">from X import *</code></h3>
+    <dl class="fa">
+      <dt>Imports all objects from a module.</dt>
+      <dt>Not recommended to use it, as a name collision could occurs.</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      from helper_module import *
+
+      user_name = get_user_name()
+      greet(user_name)
+    </code></pre>
+  </section>
+  <section><h3>Where <code>import</code> looks for a module?</h3>
+    <dl class="fa">
+      <dt>The directory containing the input script</dt>
+      <dt>the directories specified in the <span class="note">PYTHONPATH</span> environment variable</dt>
+      <dt>The installation-dependent default.</dt>
+    </dl>
+  </section>
+  <section><h3>Relative import</h3>
+    <dl class="fa">
+      <dt>A relative import uses the relative path (starting from the path of the current module) to the desired module to import</dt>
+    </dl>
+  </section>
+  <section><h3>Relative import - example</h3>
+    <pre><code rel="Terminal" class="shell" data-noescape>
+      $ tree my_app
+      my_app/
+      ├── app.py
+      ├── lib
+      │   ├── helper_module.py
+    </code></pre>
+    <pre><code rel="app.py" class="python">
+      import lib.helper_module as hm
+
+      user_name = hm.get_user_name()
+      hm.greet(user_name)
+    </code></pre>
+  </section>
+  <section><h3>Python's built-in modules</h3>
+    <dl class="fa">
+      <dt>or why Python is "Batteries Included"</dt>
+      <dt><a href="https://docs.python.org/3/py-modindex.html">Python Module Index</a></dt>
+      <dt>to use a built-in (standard) module, you have to import it!</dt>
+    </dl>
+  </section>
+  <section><h3>Python's third-party modules</h3>
+    <dl class="fa">
+      <dt>The Python Packaging Index <a href="https://pypi.python.org/pypi">PyPI</a>is a public repository of open source licensed packages made available for use by other Python users.</dt>
+      <dt><a href="https://docs.python.org/3/installing/">Installing Python Modules @python3 docs</a></dt>
+      <dt><a href="https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments">Creating Virtual Environments</a></dt>
+      <dt><a href="https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies"></a>Managing Application Dependencies</dt>
+    </dl>
+  </section>
+</section>
+
+<section><h1>Packages in Python</h1></section>
+<section><h2>Packages in Python</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>A Python package is simply a group of Python module(s), usually stored in one directory</dt>
+      <dt>Packages are a way of structuring Python’s module namespace by using “dotted module names”.</dt>
+    </dl>
+  </section>
+  <section><h3>make directory a package: <code class="note">__init__.py</code></h3>
+  	<dl class="fa">
+  		<dt>You should put an <code class="note">__init__.py</code> file in the directory, which you want it to be treated as package from Python.</dt>
+  		<dt><code class="note">__init__.py</code> can be an empty file</dt>
+  		<dt>or you can put some initialization code for the package</dt>
+  	</dl>
+  </section>
+  <section><h3>a package - example</h3>
+  	<pre><code rel="Terminal" class="shell" data-noescape>
+  		$ tree my_app
+  		my_app/
+  		├── app.py
+  		└── packA
+  		    ├── greet.py
+  		    ├── __init__.py
+  		    └── packB
+  		        ├── get_data.py
+  		        └── __init__.py
+  	</code></pre>
+  </section>
+  <section><h3>Importing packages</h3>
+  	<dl class="fa">
+  		<dt>You can import a package using the same mechanism as importing a module. But do  not forget - a package makes its namespace, as well</dt>
+  	</dl>
+  </section>
+</section>
+
+
+<section><h1>Import-related module attributes</h1></section>
+<section><h2>Import-related module attributes</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>Python modules are objects and as such they have attributes.</dt>
+      <dt>Most useful module attributes are:</dt>
+      <dd>__name__</dd>
+      <dd>__file__</dd>
+    </dl>
+  </section>
+  <section><h3><code>__name__</code></h3>
+    <dl class="fa">
+      <dt>When Python interpreter reads a <code>.py</code> file, it executes the code in it!</dt>
+      <dt>If a <code>.py</code> file is executed as a module:</dt>
+      <dd><code>__name__</code> is set to module's own filename</dd>
+      <dt>If a <code>.py</code> file is executed as stand-alone program:</dt>
+      <dd><code>__name__</code> is set to <code>"__main__"</code></dd>
+    </dl>
+  </section>
+  <section><h3><code>__name__ - examples</code></h3>
+    <p>Create in same directory next Python files:</p>
+    <pre><code rel="main.py" class="python">
+      import helper_module
+    </code></pre>
+    <pre><code rel="helper_module.py" class="python">
+      if __name__ == "__main__":
+        print("helper_module is executed as stand-alone py file")
+      else:
+        print("helper_module is imported as module")
+    </code></pre>
+    <dl class="fa">
+      <dt>Run the <code>main.py</code> and look at the output</dt>
+      <dt>Run the <code>helper_module.py</code> and look at the output</dt>
+    </dl>
+  </section>
+  <section><h3><code>__file__</code></h3>
+    <dl class="fa">
+      <dt>Stores the full filename (including path) of the file/module being executed</dt>
+      <dt>Will be same, no matter if the file is executed as a stand-alone or as a module.</dt>
+      <dt>If we need to strip the path, and get just the filename, </dt>
+    </dl>
+  </section>
+  <section><h3><code>__file__ - examples</code></h3>
+    <p>Create in same directory next Python files:</p>
+    <pre><code rel="main.py" class="python">
+      import helper_module
+    </code></pre>
+    <pre><code rel="helper_module.py" class="python">
+      print( "__file__:", __file__)
+    </code></pre>
+    <dl class="fa">
+      <dt>Run the <code>main.py</code> and look at the output</dt>
+      <dt>Run the <code>helper_module.py</code> and look at the output</dt>
+    </dl>
+  </section>
+</section>
+
+
+
+
+<!-- <section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+  <section><h3>The Task</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+</section>
+
+<section><h3>Submission</h3>
+  <dl class="fa">
+    <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+    <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=modulesAndPackages">progressbg.python.course@gmail.com</a></dt>
+  </dl>
+</section> -->
+
+
+
+<section class="disclaimer" data-background="/ProgressBG-VC2-Python/outfit/images/for_slides/the_end_on_sand.jpg">
+   <p>These slides are based on</p>
+   <p>customised version of </p>
+   <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+   <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+    </div>
+  </div>
+  <!-- Custom processing -->
+  <script src="/ProgressBG-VC2-Python/outfit/js/slides.js"></script>
+  <!-- external scripts -->
+  <script src="/ProgressBG-VC2-Python/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/ProgressBG-VC2-Python/lib/reveal.js/js/reveal.js"></script>
+   <!-- init reveal -->
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    var highlightjsTabSize = '  ';
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      history: true,
+      center: true,
+      width: 1024,
+      height: 850,
+      // Bounds for smallest/largest possible scale to apply to content
+      // minScale: .5,
+      maxScale: 1,
+      // slide transition
+      transition: 'concave', // none/fade/slide/convex/concave/zoom
+      // Factor of the display size that should remain empty around the content
+      margin: 0.1,
+      // shift+maous click to zoom in/out element
+      zoomKey: 'ctrl',
+      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      // transition: Reveal.getQueryHash().transition || 'default'
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+</body>
+</html>

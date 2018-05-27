@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>usingTheFilesystem</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/dark.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC2-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC2-Python/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-VC2-Python/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div><span>N/Спейс</span><span>следващ слайд</span></div>
+				<div><span>P</span><span>предишен слайд</span></div>
+				<div><span>O</span><span>всички слайдове</span></div>
+				<div><span>ctrl+left click</span><span>увеличава елемента</span></div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Using the file-system</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-VC2-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2018,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+<section><h1>Directory Manipulations</h1></section>
+<section><h2>Directory Manipulations</h2>
+	<section><h3>Get the current working directory </h3>
+	  <dl class="fa">
+	    <dt><code>os.getcwd()</code></dt>
+	    <dd>Return a string representing the current working directory</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    >>> os.getcwd()
+	    '/data/python_demos/music/The Cure'
+	  </code></pre>
+	</section>
+	<section><h3>List entries in a directory</h3>
+	  <dl class="fa">
+	    <dt><code>os.listdir(path='dirname')</code></dt>
+	    <dd>Return a list containing the names of the entries in the directory given by path</dd>
+	    <dd>listdir() returns both files and folders, with no indication of which is which.</dd>
+	    <dd>Consider using os.scandir() when you need an iterator, instead of list</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    >>> os.listdir()
+	    ['Seventeen Seconds', 'Disintegration']
+	  </code></pre>
+	</section>
+	<section><h3>Change the current working directory</h3>
+	  <dl class="fa">
+	    <dt><code>os.chdir(path)</code></dt>
+	    <dd>Change the current working directory to the specified path.</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    >>> os.chdir("Seventeen Seconds")
+	    >>> os.getcwd()
+	    '/data/python_demos/music/The Cure/Seventeen Seconds'
+	  </code></pre>
+	</section>
+	<section><h3>Make directory </h3>
+	  <dl class="fa">
+	    <dt><code>os.mkdir(path)</code></dt>
+	    <dd>Create a directory with given path name</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    >>> os.listdir()
+	    ['Seventeen Seconds', 'Disintegration']
+
+	    >>> os.mkdir("lyrics")
+
+	    >>> os.listdir()
+	    ['lyrics', 'Seventeen Seconds', 'Disintegration']
+	  </code></pre>
+	</section>
+	<section><h3>Make directory tree</h3>
+	  <dl class="fa">
+	    <dt><code>os.makedirs(path)</code></dt>
+	    <dd>Like mkdir(), but makes all intermediate-level directories needed to contain the leaf directory.</dd>
+	    <dd>Recursive directory creation.</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    >>> os.listdir("The Cure")
+	    ['lyrics', 'Seventeen Seconds', 'Disintegration']
+
+	    >>> os.makedirs("The Cure/test/subtest")
+
+	    >>> os.listdir("The Cure")
+	    ['test', 'lyrics', 'Seventeen Seconds', 'Disintegration']
+	    >>> os.listdir("The Cure/test/")
+	    ['subtest']
+	  </code></pre>
+	</section>
+	<section><h3>Rename file or directory</h3>
+	  <dl class="fa">
+	    <dt><code>os.rename(src, dst)</code></dt>
+	    <dd>Rename the source file or directory to given destination</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    os.listdir("The Cure")
+	    ['test', 'lyrics', 'Seventeen Seconds', 'Disintegration']
+
+	    >>> os.rename("The Cure/test", "The Cure/TEST")
+
+	    >>> os.listdir("The Cure")
+	    ['TEST', 'lyrics', 'Seventeen Seconds', 'Disintegration']
+	  </code></pre>
+	</section>
+	<section><h3>Remove directory</h3>
+	  <dl class="fa">
+	    <dt><code>os.rmdir(path)</code></dt>
+	    <dd>Remove (delete) the directory path.</dd>
+	    <dd>Only works when the directory is empty, otherwise, OSError is raised.</dd>
+	    <dd class="note">This is safer than os.removedirs(), which will delete even non-empty directories.</dd>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    >>> os.listdir("The Cure/TEST/")
+	    ['subtest']
+
+	    >>> os.rmdir("The Cure/TEST/subtest/")
+
+	    >>> os.listdir("The Cure/TEST/")
+	    []
+	  </code></pre>
+	</section>
+</section>
+
+<section><h1>Files Manipulations</h1></section>
+<section><h2>Files Manipulations</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>For basic files operations, like reading, writing, appending, to files we can use the built-in <code>file</code> object and its methods and built-in functions</dt>
+		</dl>
+	</section>
+	<section><h3>open file</h3>
+	  <dl class="fa">
+	    <dt><code>fh = open(file_path, mode="<em>mode</em>")</code></dt>
+	    <dt>Open file by the given pathname and return a corresponding file object</dt>
+	    <dt><em>mode</em></dt>
+	    <dd>'r' - open for reading (default)</dd>
+	    <dd>'w' - open for writing, truncating the file first</dd>
+	    <dd>'a' - open for writing, appending to the end of the file if it exists</dd>
+	    <dt>After the work with the file is done, you have to call fh.close() in order to release the fh</dt>
+	  </dl>
+	</section>
+
+	<section><h3>Read from file</h3>
+	  <dl class="fa">
+	    <dt><code>fh.read()</code></dt>
+	    <dd>Reads file content and stores it in variable </dd>
+	    <dt>fh.readlines()</dt>
+	  </dl>
+	  <pre><code rel="Python" class="python">
+	    contents =f.read()
+	  </code></pre>
+	</section>
+
+	<section><h3>Write to a file</h3>
+	  <dl class="fa">
+	    <dt><code>fh.write(str)</code></dt>
+	    <dd>Writes a string to the file. There is no return value</dd>
+	    <dt><code>fh.writelines(sequence)</code></dt>
+	    <dd>Writes a sequence of strings to the file. The sequence can be any iterable object producing strings, typically a list of strings.</dd>
+	  </dl>
+	</section>
+
+	<section><h3>Remove a file </h3>
+	  <dl class="fa">
+	    <dt><code>os.remove(file_path)</code></dt>
+	    <dd>Removes a file with the given file_path </dd>
+	  </dl>
+	</section>
+
+	<section><h3>the <code>with</code> statement</h3>
+		<pre><code rel="Syntax" class="shell" data-noescape>
+			with expression as identifier :
+			    statement
+			    statement
+			    ...
+			    statement
+		</code></pre>
+		<dl class="fa">
+			<dt>Useful to open a file, process its contents, and make sure it is closed</dt>
+		</dl>
+	</section>
+	<section><h3>the <code>with</code> statement</h3>
+		<pre><code rel="Python" class="python">
+			with open("test.txt") as fh:
+			    data = fh.read()
+			    do something with data
+		</code></pre>
+	</section>
+
+
+	<section><h3>Live Demo</h3></section>
+
+	<section><h3>Resources</h3>
+		<dl class="fa">
+			<dt><a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files">Reading and Writing Files</a></dt>
+			<dt><a href="https://www.tutorialspoint.com/python/file_methods.htm">Python File Methods</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Prerequisites</h2>
+	<p>The tasks bellow needs some test data.</p>
+	<p>You can download the <a href="Task_and_HW.zip">Task_and_HW.zip</a> (rename it to <code>Task_and_HW.zip</code> and extract) in order to get the data and the pre-given folder structure.</p>
+</section>
+<section><h2>Task1: Simple Backup</h2>
+	<section><h3>The Task</h3>
+		<p>Create a simple backup function to archive the content in one folder (src) int oother folder (dest), while setting a timestamp into filenames, as explained in the function docstring below</p>
+		<pre><code rel="Python" class="python">
+			def backup(src, dest):
+			  """Backup files in src folder into dest folder.
+			    Do not remove the files in source folder.
+			    To each file attach suffix with curent timestamp in the form
+			    '2018-04-12_18-30-45'
+
+			  Args:
+			      src (string): Source folder
+			      dest (string): Destination folder
+
+			  Example:
+			    /src/track5.mp3 => /dest/track5.mp3_2018-04-12_18-30-45
+			  """
+		</code></pre>
+	</section>
+	<section><h3>Hints</h3>
+		<dl class="fa">
+			<dt>To get the current timestamp, you can use next function:</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			def get_timestamp():
+			  #get the current local date-time
+			  cldt = datetime.datetime.today()
+
+			  # get the timestamp as a string with given format
+			  timestamp = datetime.datetime.strftime(cldt, '%Y-%m-%d_%H_%M_%S')
+
+			  return timestamp
+		</code></pre>
+	</section>
+	<section><h3>Solution</h3>
+		<p>Note, that the solution, presented here is for exercise purpose. You do not want to use it in production code! Later, we will discuss the safer technique.</p>
+		<p><a href="https://pastebin.com/MAPV3P0M">Get the code!</a></p>
+	</section>
+</section>
+<section><h2>Task2: Simple Cataloger</h2>
+	<section><h3>The Task</h3>
+		<p>Distribute files in one folder (src) into a corresponding sub-folders,
+    according to their file-type, as explained in the function docstring bellow</p>
+		<pre><code rel="Python" class="python">
+			def cataloger(src):
+		    """Distribute files in the src folder into a corresponding sub-folders,
+		    according to their file-type.
+
+		    Each catalogue, is a subfolder made by a filename extension
+
+		    Examples:
+		     /data/notes1.txt => /data/txt/notes1.txt
+		     /data/notes2.txt => /data/txt/notes2.txt
+		     /data/picture1.png => /data/png/picture1.png
+		     /data/track1.mp3 => /data/mp3/track1.mp3
+
+		    Args:
+		        src (string): source folder
+		    """
+		</code></pre>
+	</section>
+	<section><h3>Hints</h3>
+		<dl class="fa">
+			<dt>To extract the file extension, you can use the <code>os.path.splitext()</code> method from the <a href="https://docs.python.org/3/library/os.path.html">os.path</a> module</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			import os.path
+
+			filename = "/data/new/test.txt"
+			extension = os.path.splitext(filename)[1][1:]
+
+			print(extension)
+		</code></pre>
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=___MainSectionTitle___">progressbg.python.course@gmail.com</a></dt>
+	</dl>
+</section>
+
+<section class="disclaimer" data-background="/ProgressBG-VC2-Python/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-VC2-Python/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-VC2-Python/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-VC2-Python/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1024,
+			height: 850,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

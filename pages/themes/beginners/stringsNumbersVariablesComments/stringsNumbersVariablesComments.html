@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>stringsNumbersVariablesComments</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/light.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC2-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC2-Python/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-VC2-Python/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div><span>N/Спейс</span><span>следващ слайд</span></div>
+				<div><span>P</span><span>предишен слайд</span></div>
+				<div><span>O</span><span>всички слайдове</span></div>
+				<div><span>ctrl+left click</span><span>увеличава елемента</span></div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section><h1>Strings and Numbers in Python.<br>Simple Expressions. Variables. Comments.</h1></section>
+<section data-transition="zoom">
+	<!-- linkedin badge -->
+	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+	<section class="copyright" data-transition="zoom">
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/програмиране-с-python-2/">
+			<img style="height:80%" src="/ProgressBG-VC2-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+		<div class="author">
+			<span class="note">Iva E. Popova, 2018,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+		<div class="company">
+			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+		</div>
+	</section>
+</section>
+
+<section><h2>What's in a program</h2>
+	<dt>If we make an analogy with a natural language:
+		<table style="margin-left: 1em">
+			<tr>
+				<th>Bulgarian</th>
+				<th></th>
+				<th>Python</th>
+			</tr>
+			<tr>
+				<td>novel</td>
+				<td><=></td>
+				<td>program</td>
+			</tr>
+			<tr>
+				<td>paragraph</td>
+				<td><=></td>
+				<td>block</td>
+			</tr>
+			<tr>
+				<td>sentences</td>
+				<td><=></td>
+				<td>instructions</td>
+			</tr>
+			<tr>
+				<td>types of sentences (declarative, imperative,...)</td>
+				<td><=></td>
+				<td>types of instructions (statements, expressions)</td>
+			</tr>
+			<tr>
+				<td>grammar rules (can be ambiguous)</td>
+				<td><=></td>
+				<td>grammar rules (could not be ambiguous)</td>
+			</tr>
+		</table>
+	</dt>
+</section>
+<section><h2>What's in a Python program</h2>
+	<dl class="fa">
+		<dt>A program consists of set of instructions, which are executed by the computer.</dt>
+		<dt>In Python, we write each instruction on a new line.</dt>
+		<dt>Instructions which performs one task are separated as a <code class="note">block</code>.</dt>
+		<dt>In Python the block is not separated by braces, as in other programming languages, but by <span class="note">same indentation</span> of the instructions in it.</dt>
+	</dl>
+</section>
+
+<section><h2>Data Types?</h2>
+	<dl class="fa">
+		<dt>Programming is about manipulating <b>data</b></dt>
+		<dt>Each programming language defines its data types and the corresponding operations which can be performed on each data type.</dt>
+		<dt>In Python, each data type literal is represented internally as <b>object</b></dt>
+	</dl>
+</section>
+
+<section><h2>Number data Type</h2>
+	<section>
+		<dl class="fa">
+			<dt>In Python we can use <span class="keyword">integer</span>, <span class="keyword">floating point</span> and <span class="keyword">complex</span> numbers</dt>
+			<dt>Numbers are <span class="note">immutable</span> data type!</dt>
+			<dt>Most arithmetic operations are natively defined in Python.</dt>
+			<dt>More complex math functions are defined in the <a href="https://docs.python.org/3/library/math.html">math module</a></dt>
+		</dl>
+	</section>
+	<section><h3>integer numbers</h3>
+		<p>we can use positive and negative integers:</p>
+		<pre><code rel="Python" class="python">
+			>>> 42
+			42
+			>>> -42
+			-42
+		</code></pre>
+	</section>
+	<section><h3>floating point numbers</h3>
+		<p>we can use positive and negative floating point numbers</p>
+		<pre><code rel="Python" class="python">
+			>>> 3.1234
+			3.1234
+			>>> -0.255
+			-0.255
+			>>> .44
+			0.44
+			>>> -.55
+			-0.55
+			>>>
+		</code></pre>
+	</section>
+	<section><h3>arithmetic operations</h3>
+		<dl class="fa">
+			<dt><a href="https://www.programiz.com/python-programming/operators#arithmetic">Arithmetic operators</a> @programiz.com</dt>
+		</dl>
+		<p class="note">The division operator "<code>/</code>" in python2 returns the integer part(i.e. works like Floor division), while in python3 it returns the float result</p>
+	</section>
+	<section><h3>Example: arithmetic operations</h3>
+		<pre><code rel="Python" class="python">
+				>>> 5-3
+				2
+				>>> 5*3
+				15
+				>>> 5/3
+				1.6666666666666667
+				>>> 5//3
+				1
+				>>> 5%3
+				2
+		</code></pre>
+	</section>
+	<section><h3>Example: python3 vs python2 division</h3>
+		<pre><code rel="Python2" class="python">
+			>>> 5/3
+			1
+		</code></pre>
+		<pre><code rel="Python3" class="python">
+			>>> 5/3
+			1.6666666666666667
+
+			>>> 5//3
+			1
+		</code></pre>
+		<p class="note">Python3 adds the "<code>//</code>" operator for Integer division</p>
+	</section>
+	<section><h3>the <code>math</code> module</h3>
+		<dl class="fa">
+			<dt>math module is native to every python distribution.</dt>
+			<dt>to use its functions you only have to import it in your program:</dt>
+			<pre><code rel="Python" class="python">
+				import math
+				# do something with math
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>Example: math functions</h3>
+		<pre><code rel="Python" class="python">
+			>>> import math
+			>>>
+			>>> math.pi
+			3.141592653589793
+			>>> math.floor(math.pi)
+			3
+			>>> math.pow(2,3)
+			8.0
+			>>> math.sqrt(9)
+			3.0
+		</code></pre>
+	</section>
+</section>
+
+<section><h2>Strings in Python</h2>
+	<section><h3>definition</h3>
+		<dl class="fa">
+			<dt>Strings are <b>immutable</b> sequences of Unicode code points <span style="font-size: 0.8em">(will be discussed further)</span>.</dt>
+			<dt>Single-line strings literal should be closed in single or double quotes</dt>
+			<dt>Multi-line strings literal should be closed in triple single or double quotes</dt>
+		</dl>
+	</section>
+	<section><h3>Examples</h3>
+		<pre><code rel="Python" class="python">
+			>>> "this is a single line string"
+			'this is a single line string'
+
+			>>> 'another single line string with UTF charactes like 🍷'
+			'another single line string with UTF charactes like 🍷'
+
+			>>> 'but can not be spred in multiple lines
+		  File "<stdin>", line 1
+		    'but can not be spred in multiple lines
+		                                         ^
+			SyntaxError: EOL while scanning string literal
+		</code></pre>
+	</section>
+	<section><h3>Examples</h3>
+		<pre><code rel="Python" class="python">
+			>>> """infact you can -
+			... if you use these triple quotes"""
+			'infact you can - \nif you use these triple quotes'
+
+			>>> '''or these triple quotes
+			... can separate multiline without errors'''
+			'or these triple quotes\ncan separate multiline without errors'
+
+
+		</code></pre>
+	</section>
+</section>
+
+<section><h2>Strings operations</h2>
+	<section><h3>concatenation: <code>+</code></h3>
+		<p>The operation is defined only on <span class="note">same data types</span>, I.e. Python can not concatenate apples with oranges:</p>
+		<pre><code rel="Python" class="python">
+			#string concatenation with '+':
+			>>> "ala" + "bala"
+			'alabala
+
+			>>> "1" + "2"
+			'12'
+
+			>>> "1" + 3
+			Traceback ...
+			TypeError: cannot concatenate 'str' and 'int' objects
+		</code></pre>
+	</section>
+	<section><h3>repetition: <code>*</code></h3>
+		<p>One of the operands must be <span class="note">string</span>, the other - <span class="note">integer</span></p>
+		<pre><code rel="Python" class="python">
+			>>> "-" * 10
+			'----------'
+
+			>>> "1" * 10
+			'1111111111'
+
+			>>> ">hello<" * 3
+			'>hello<>hello<>hello<'
+
+			>>> "a" * "3"
+			Traceback ...
+			TypeError: can't multiply sequence by non-int of type 'str'
+		</code></pre>
+	</section>
+	<section><h3>String Methods</h3>
+		<pre><code rel="Python" class="python">
+			# string methods:
+			>>> "iva".capitalize()
+			'Iva'
+		</code></pre>
+		<p style="opacity: 0.7; font-size: 0.9em">What a method is will be discussed further!</p>
+		<p>For now, you can try to look at the docs: <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">String Methods @docs.python.org</a></p>
+	</section>
+</section>
+
+<section><h2>Variables</h2>
+	<section><h3>What are they?</h3>
+		<dl class="fa">
+			<dt>A names for "containers" (placed in RAM) in which values can be stored</dt>
+			<dt>We can <b>set</b> values in a variable, i.e. to <b>write</b> a value into the corresponding container.</dt>
+			<dt>We can <b>get</b> the variable value, i.e. to <b>read</b> the content of the corresponding container</dt>
+		</dl>
+	</section>
+	<section><h3>example</h3>
+		<pre><code rel="Python" class="python">
+			x = 99
+			y = 3,141516
+			first_name = "ada"
+			sur_name = "byron"
+			num_list = [1,2,3]
+
+			print("x = ", x,)
+			print("y = ", y)
+			print("first_name = ", first_name)
+			print("sur_name = ", sur_name)
+			print("num_list = ", num_list)
+		</code></pre>
+	</section>
+	<section><h3>A very simplified view of variables in RAM</h3>
+		<a href="images/python_variables_in_RAM.png"><img src="images/python_variables_in_RAM.png"></a>
+	</section>
+</section>
+
+<section><h2>Comments</h2>
+	<section><h3>Why to comment our code?</h3>
+		<dl class="fa">
+			<dt>Python interpreter ignores every part of a program, which is marked as a "comment"</dt>
+			<dt>Comments are used to explain and/or summarize a part of our program in a more readable manner</dt>
+			<dt>For debugging purposes - when we need fast to ignore a block of code</dt>
+			<dt>For other meta information about the program (programme name, author, date, etc.)</dt>
+			<dt>A well commented program is more readable and maintainable</dt>
+		</dl>
+	</section>
+	<section><h3>How to comment our code?</h3>
+		<dl class="fa">
+			<dt>Single line comment: <code class="note">#</code></dt>
+			<dd>every line which starts with <code class="note">#</code>(hash tag) is a comment and is ignored py Python interpreter</dd>
+			<pre><code rel="Python" class="python">
+				# this is a just a comment: no print("whatever") will happens
+				print("this will be printed, of course")
+
+				### a more semantic example for comment:
+				# check if a triangle with sides (3,4,5) is a Pythagorean:
+				print(3**2 + 4**2 == 5**2)
+			</code></pre>
+		</dl>
+	</section>
+</section>
+
+
+<section id="hw">
+	<h1>Exercises</h1>
+</section>
+<section><h2><b>Academical to Astronomical hours converter</b></h2>
+	<section><h3>The problem</h3>
+		<dl class="fa">
+			<dt>Given that:</dt>
+			<dd>An astronomical hour consists of 60 minutes</dd>
+			<dd>An academical hour consists of 40 minutes</dd>
+			<dd>For each 4 academical hours there are 20 minutes brake</dd>
+			<dt>Write a Python program, that will print out how many astronomical hours a python course should take, if it consists of 64 academical hours, including the respective brakes</dt>
+		</dl>
+		<pre><code rel="Output" class="shell">
+			48.0
+		</code></pre>
+	</section>
+	<section><h3>solution - without variables</h3>
+		<pre><code rel="Python" class="python">
+			"""
+			acad_to_astro_hours.py
+
+			Solution without using variables to store values
+			"""
+
+			print((64*40 + 64/4*20)/60)
+		</code></pre>
+	</section>
+
+	<section><h3>solution: too many variables</h3>
+		<pre><code rel="Python" class="python">
+			"""
+			acad_to_astro_hours_with_vars.py
+
+			An example of too many variables, with too long names.
+			"""
+
+			# given:
+			minutes_in_astro_hour = 60
+			minutes_in_acad_hour = 40
+			acad_course_hours = 64
+			acad_hours_in_a_partida = 4
+
+			# program logic:
+			acad_hours_partidas = acad_course_hours/acad_hours_in_a_partida
+
+			total_minutes_brakes = acad_hours_partidas * 20
+
+			minutes_in_a_course = acad_course_hours * minutes_in_acad_hour + total_minutes_brakes
+
+			course_in_astro_hours = minutes_in_a_course / 60
+
+			print(course_in_astro_hours)
+
+
+
+
+		</code></pre>
+	</section>
+
+	<section><h3>HW:acad_to_astro_hours</h3>
+		<dl class="fa">
+			<dt>Write your solution, using your logic and your variables names.</dt>
+			<dt>Try to think of a solution, which will be readable enough (# you can use comments) and easy to maintain in future</dt>
+			<dt>write your code in a file, named &lt;prefix&gt;_acad_to_astro_hours.py</dt>
+			<dd>where &lt;prefix&gt; is your name initials</dd>
+			<dd>For instance: <b>iep_acad_to_astro_hours.py</b></dd>
+			<dt>send it to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW:acad_to_astro_hours">progressbg.python.course@gmail.com</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h2><b>Body Mass Index calculator</b></h2>
+	<section><h3>The problem</h3>
+		<dl class="fa">
+			<dt>Calculate your body mass index (BMI) with Python, given the formula:<br>
+			<code class="note">BMI = W / (H*H)</code><br>
+			where:
+			</dt>
+			<dd>W = weight_in_kilogram</dd>
+			<dd>H = height_in_meters</dd>
+			<dt>Your program should outputs the rounded result (to 2 digits from the decimal point). You can use the python's build-in <a href="https://www.tutorialspoint.com/python/number_round.htm">round()</a> function, like:</dt>
+			<pre><code rel="Python" class="python">
+				>>> round(2.1457, 2)
+				2.15
+
+				>>> round(1.4234,2)
+				1.42
+
+				>>> round(1.4284,2)
+				1.43
+			</code></pre>
+		</dl>
+	</section>
+	<section><h3>BMI Categories</h3>
+		<p class="note">What is your BMI category?</p>
+		<table>
+			<tr><th>BMI</th><th>Category</th></tr>
+			<tr><td>&lt;= 18.5</td><td>Underweight</td></tr>
+			<tr><td>18.5–24.9</td><td>Normal</td></tr>
+			<tr><td>25–29.9</td><td>Overweight</td></tr>
+			<tr><td>&gt;= 30</td><td>Obesity</td></tr>
+		</table>
+	</section>
+	<section><h3>solution</h3>
+		<pre><code rel="Python" class="python">
+			"""
+			Solution without using variables to store values,
+
+			and given that W = 53, H = 1.67:
+			"""
+			print(round(53/(1.67*1.67), 2))
+
+			# 19.0
+
+		</code></pre>
+	</section>
+	<section><h3>HW: BMI.py</h3>
+		<dl class="fa">
+			<dt>Try to think of a solution, which will be readable enough and easy to maintain in future (you can use comments and semantic variable names)</dt>
+			<dt>write your code in a file, named &lt;prefix&gt;_BMI.py</dt>
+			<dd>where &lt;prefix&gt; is your name initials</dd>
+			<dd>For instance: <b>iep_BMI.py</b></dd>
+			<dt>send it to <a href="mailto:progressbg.python.course@gmail.com?Subject=HW:BMI">progressbg.python.course@gmail.com</a></dt>
+		</dl>
+	</section>
+</section>
+
+<section class="disclaimer" data-background="/ProgressBG-VC2-Python/outfit/images/for_slides/the_end_on_sand.jpg">
+	 <p>These slides are based on</p>
+	 <p>customised version of </p>
+	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-VC2-Python/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-VC2-Python/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-VC2-Python/lib/reveal.js/js/reveal.js"></script>
+	 <!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
+			center: true,
+			width: 1024,
+			height: 850,
+			// Bounds for smallest/largest possible scale to apply to content
+			// minScale: .5,
+			maxScale: 1,
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>

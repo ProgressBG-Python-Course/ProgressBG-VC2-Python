@@ -1,0 +1,17 @@
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# virtualenv
+.venv
+venv/
+ENV/
+
+
+#other
+*.sublime-workspace
+nohup.out
+__*
+*.ipynb_checkpoints

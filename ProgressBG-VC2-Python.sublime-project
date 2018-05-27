@@ -1,0 +1,23 @@
+{
+	"build_systems":
+	[
+	],
+	"folders":
+	[
+		{
+			"path": ".",
+			// "file_exclude_patterns": ["*.pyc", "*.pyo"]
+		}
+	],
+	"settings":
+	{
+		"dictionary": "Packages/Language - Bulgarian/OldBulgarian.dic",
+		"show_definitions": false,
+		"spell_check": true,
+		"tab_size": 2,
+		"translate_tabs_to_spaces": true,
+		"trim_trailing_white_space_on_save": true,
+		// "file_exclude_patterns": [],
+	},
+	// "virtualenv": "/data/projects/www/wwwcourses.github.io/ProgressBG-VC2-Python/.venv"
+}
