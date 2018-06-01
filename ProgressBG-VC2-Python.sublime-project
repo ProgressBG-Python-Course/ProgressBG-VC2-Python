@@ -11,7 +11,7 @@
 	],
 	"settings":
 	{
-		"dictionary": "Packages/Language - Bulgarian/OldBulgarian.dic",
+		// "dictionary": "Packages/Language - Bulgarian/OldBulgarian.dic",
 		"show_definitions": false,
 		"spell_check": true,
 		"tab_size": 2,
