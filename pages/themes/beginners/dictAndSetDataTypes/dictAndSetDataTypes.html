@@ -1,55 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>dictAndSetDataTypes</title>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-	<!-- css & themes include -->
-	<link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/light.css" id="theme">
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement( 'link' );
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC2-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC2-Python/lib/reveal.js/css/print/paper.css';
-		document.getElementsByTagName( 'head' )[0].appendChild( link );
-	</script>
-	<!--[if lt IE 9]>
-	<script src="lib/js/html5shiv.js"></script>
-	<![endif]-->
+  <meta charset="utf-8">
+  <title>dictAndSetDataTypes</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <!-- css & themes include -->
+  <link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/light.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-VC2-Python/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-VC2-Python/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
 
-	<!-- CUSTOM -->
-	<style type="text/css">
-		.reveal section iframe{
-			text-align: center;
-			margin: 0 auto;
-			height: 70vh;
-		}
+  <!-- CUSTOM -->
+  <style type="text/css">
+    .reveal section iframe{
+      text-align: center;
+      margin: 0 auto;
+      height: 70vh;
+    }
 
-	</style>
-	<base target="_blank">
+  </style>
+  <base target="_blank">
 </head>
 <body>
-	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-		<div class="top_links">
-			<a class="home_link" href="/ProgressBG-VC2-Python/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
-			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
-			<div class="help_text">
-				<div><span>N/Спейс</span><span>следващ слайд</span></div>
-				<div><span>P</span><span>предишен слайд</span></div>
-				<div><span>O</span><span>всички слайдове</span></div>
-				<div><span>ctrl+left click</span><span>увеличава елемента</span></div>
-			</div>
-		</div>
-		<div class="footer theme_switch">
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/light.css'); return false;">Light</a>
-			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
-		</div>
-		<div class="slides">
+  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+    <div class="top_links">
+      <a class="home_link" href="/ProgressBG-VC2-Python/pages/agenda/agenda.html#Course_Intro" target="_top"><i class="fa fa-home"></i></a>
+      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+      <div class="help_text">
+        <div><span>N/Спейс</span><span>следващ слайд</span></div>
+        <div><span>P</span><span>предишен слайд</span></div>
+        <div><span>O</span><span>всички слайдове</span></div>
+        <div><span>ctrl+left click</span><span>увеличава елемента</span></div>
+      </div>
+    </div>
+    <div class="footer theme_switch">
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-VC2-Python/outfit/css/themes/projector.css'); return false;">Projector</a>
+    </div>
+    <div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -57,663 +57,696 @@
 -->
 <section><h1>More Data Types: Dictionaries and Sets</h1></section>
 <section data-transition="zoom">
-	<!-- linkedin badge -->
-	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-	<section class="copyright" data-transition="zoom">
-		<div class="note">
-			<p>Created for</p>
-		</div>
-		<div class="company">
-			<a href="http://progressbg.net/програмиране-с-python-2/">
-			<img style="height:80%" src="/ProgressBG-VC2-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
-			</a>
-		</div>
-		<div class="author">
-			<span class="note">Iva E. Popova, 2018,</span>
-			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-		</div>
-	</section>
-	<section class="copyright" data-transition="zoom" style="margin-top: -2em;">
-		<div class="company">
-			 <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
-		</div>
-	</section>
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+  <section class="copyright" data-transition="zoom">
+    <div class="note">
+      <p>Created for</p>
+    </div>
+    <div class="company">
+      <a href="http://progressbg.net/програмиране-с-python-2/">
+      <img style="height:80%" src="/ProgressBG-VC2-Python/outfit/images/logos/ProgressBG_logo_529_127.png">
+      </a>
+    </div>
+    <div class="author">
+      <span class="note">Iva E. Popova, 2018,</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
+  <section class="copyright" data-transition="zoom" style="margin-top: -2em;">
+    <div class="company">
+       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova on LinkedIn</a></div>
+    </div>
+  </section>
 </section>
 
 <section><h1>Dictionaries</h1></section>
 <section><h2>Dictionaries</h2>
-	<section><h3>What is a Dictionary?</h3>
-		<dl class="fa">
-			<dt>An <span class="note">unordered</span> collection of objects (values)</dt>
-			<dt>Each value is associated with a <span class="note">unique key</span>.</dt>
-			<dt>A dictionary can be regarded as a collection of <span class="note">key:value</span> pairs</dt>
-			<dt>Dictionaries in Python are similar to <em>associative arrays</em>, <em>hashes (hash tables)</em> in other programming languages (PHP, Perl, Ruby)</dt>
-		</dl>
-	</section>
-	<section><h3>Dictionary Structure</h3>
-		<a href="images/dictionary_structure.png"><img src="images/dictionary_structure.png"></a>
-	</section>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			dictionary = {
-			'key1': <em>value 1</em>,
-			'key2': <em>value 2</em>,
-			'keyN': <em>value N</em>
-			}
-		</code></pre>
-		<dl class="fa">
-			<dt>There is <span class="note">no order</span> in dictionary! We can not say if 'key1' pair will be before 'key2' pair</dt>
-			<dt>Keys must be <span class="note">immutable</span> data type. Usually they are strings.</dt>
-		</dl>
-	</section>
-	<section><h3>Retrieve item from dictionary</h3>
-		<p>Dictionary values can be retrieved from the collection using their respective keys.</p>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-				item = dictionary_name[<em>key</em>]
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			prices = {
-			  "apples": 2.50,
-			  "oranges": 2.43,
-			  "bananas": 3.50
-			}
+  <section><h3>What is a Dictionary?</h3>
+    <dl class="fa">
+      <dt>An <span class="note">unordered</span> collection of objects (values)</dt>
+      <dt>Each value is associated with a <span class="note">unique key</span>.</dt>
+      <dt>A dictionary can be regarded as a collection of <span class="note">key:value</span> pairs</dt>
+      <dt>Dictionaries in Python are similar to <em>associative arrays</em>, <em>hashes (hash tables)</em> in other programming languages (PHP, Perl, Ruby)</dt>
+    </dl>
+  </section>
+  <section><h3>Dictionary Structure</h3>
+    <a href="images/dictionary_structure.png"><img src="images/dictionary_structure.png"></a>
+  </section>
+  <section><h3>Syntax</h3>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+      dictionary = {
+      'key1': <em>value 1</em>,
+      'key2': <em>value 2</em>,
+      'keyN': <em>value N</em>
+      }
+    </code></pre>
+    <dl class="fa">
+      <dt>There is <span class="note">no order</span> in dictionary! We can not say if 'key1' pair will be before 'key2' pair</dt>
+      <dt>Keys must be <span class="note">immutable</span> data type. Usually they are strings.</dt>
+    </dl>
+  </section>
+  <section><h3>Retrieve item from dictionary</h3>
+    <p>Dictionary values can be retrieved from the collection using their respective keys.</p>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+        item = dictionary_name[<em>key</em>]
+    </code></pre>
+    <pre><code rel="Python" class="python">
+      prices = {
+        "apples": 2.50,
+        "oranges": 2.43,
+        "bananas": 3.50
+      }
 
-			apples_price = prices['apples']
-			print("{:.2f}".format(apples_price))
-			# 2.50
+      apples_price = prices['apples']
+      print("{:.2f}".format(apples_price))
+      # 2.50
 
-			oranges_price = prices['oranges']
-			print("{:.2f}".format(oranges_price))
-			# 2.43
-		</code></pre>
-	</section>
-	<section><h3>Change item in a dictionary</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-				dictionary_name[<em>key</em>] = <em>new_value</em>
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			### change apples prices:
-			prices['apples'] = 2.20
-			print(prices)
-			# {'apples': 2.2, 'oranges': 2.43, 'bananas': 3.5}
-		</code></pre>
-	</section>
-	<section><h3>Add item in a dictionary</h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			dictionary_name[<em>new_key</em>] = <em>new_value</em>
-		</code></pre>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      oranges_price = prices['oranges']
+      print("{:.2f}".format(oranges_price))
+      # 2.43
+    </code></pre>
+  </section>
+  <section><h3>Change item in a dictionary</h3>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+        dictionary_name[<em>key</em>] = <em>new_value</em>
+    </code></pre>
+    <pre><code rel="Python" class="python">
+      ### change apples prices:
+      prices['apples'] = 2.20
+      print(prices)
+      # {'apples': 2.2, 'oranges': 2.43, 'bananas': 3.5}
+    </code></pre>
+  </section>
+  <section><h3>Add item in a dictionary</h3>
+    <pre><code rel="Syntax" class="python" data-noescape>
+      dictionary_name[<em>new_key</em>] = <em>new_value</em>
+    </code></pre>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			### add new key:value pair:
-			prices['plums'] = 4.30
-			print(prices)
-			# {'apples': 2.5, 'oranges': 2.43, 'bananas': 3.5, 'plums': 4.3}
-		</code></pre>
-	</section>
-	<section><h3>Delete item from dictionary: <code class="note">del</code> - operator</h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			del <em>dictionary</em>[<em>key</em>]
-		</code></pre>
-		<dl class="fa">
-			<dt>Deletes the key:value pair whit the given key</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			prices = {
-				"apples": 2.50,
-				"oranges": 2.43,
-				"bananas": 3.50
-			}
+      ### add new key:value pair:
+      prices['plums'] = 4.30
+      print(prices)
+      # {'apples': 2.5, 'oranges': 2.43, 'bananas': 3.5, 'plums': 4.3}
+    </code></pre>
+  </section>
+  <section><h3>Delete item from dictionary: <code class="note">del</code> - operator</h3>
+    <pre><code rel="Syntax" class="python" data-noescape>
+      del <em>dictionary</em>[<em>key</em>]
+    </code></pre>
+    <dl class="fa">
+      <dt>Deletes the key:value pair whit the given key</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      prices = {
+        "apples": 2.50,
+        "oranges": 2.43,
+        "bananas": 3.50
+      }
 
-			### just delete 'oranges' key:value pair:
-			del prices['oranges']
-			print(prices)
-			# {'apples': 2.5, 'bananas': 3.5}
-		</code></pre>
-	</section>
-	<section><h3>Delete item from dictionary: <code class="note">pop()</code></h3>
-		<pre><code rel="Syntax" class="python" data-noescape>
-			pop(<em>key</em>[, <em>default</em>])
-		</code></pre>
-		<dl class="fa">
-			<dt>If <em>key</em> is in the dictionary, remove it and return its value, else return <em>default</em>.</dt>
-			<dt>If no <em>key</em> or <em>default</em> values are given a KeyError is raised.</dt>
-		</dl>
-	</section>
-	<section><h3>Delete item from dictionary: <code class="note">pop()</code> - example</h3>
-		<pre><code rel="Python" class="python">
-			prices = {
-			  "apples": 2.50,
-			  "oranges": 2.43,
-			  "bananas": 3.50
-			}
+      ### just delete 'oranges' key:value pair:
+      del prices['oranges']
+      print(prices)
+      # {'apples': 2.5, 'bananas': 3.5}
+    </code></pre>
+  </section>
+  <section><h3>Delete item from dictionary: <code class="note">pop()</code></h3>
+    <pre><code rel="Syntax" class="python" data-noescape>
+      pop(<em>key</em>[, <em>default</em>])
+    </code></pre>
+    <dl class="fa">
+      <dt>If <em>key</em> is in the dictionary, remove it and return its value, else return <em>default</em>.</dt>
+      <dt>If no <em>key</em> or <em>default</em> values are given a KeyError is raised.</dt>
+    </dl>
+  </section>
+  <section><h3>Delete item from dictionary: <code class="note">pop()</code> - example</h3>
+    <pre><code rel="Python" class="python">
+      prices = {
+        "apples": 2.50,
+        "oranges": 2.43,
+        "bananas": 3.50
+      }
 
-			### remove 'apples' key:value pair from the dictinary, and return its value
-			apples_price = prices.pop('apples')
-			print(apples_price, prices)
-			# 2.5 {'oranges': 2.43, 'bananas': 3.5}
+      ### remove 'apples' key:value pair from the dictinary, and return its value
+      apples_price = prices.pop('apples')
+      print(apples_price, prices)
+      # 2.5 {'oranges': 2.43, 'bananas': 3.5}
 
-			apples_price = prices.pop('apples', 5.00)
-			print(apples_price)
-			# 5.0
-		</code></pre>
-	</section>
-	<section><h3>Get all dictionary keys: <code class="note">keys()</code></h3>
-		<dl class="fa" style="font-size: .9em">
-			<dt>the <code>keys()</code> method of a dictionary returns a <em><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">dict view object</a></em> of dictionary keys, which means the view will reflect the changes of the dictionary keys.</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      apples_price = prices.pop('apples', 5.00)
+      print(apples_price)
+      # 5.0
+    </code></pre>
+  </section>
+  <section><h3>Get all dictionary keys: <code class="note">keys()</code></h3>
+    <dl class="fa" style="font-size: .9em">
+      <dt>the <code>keys()</code> method of a dictionary returns a <em><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">dict view object</a></em> of dictionary keys, which means the view will reflect the changes of the dictionary keys.</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			fruits = prices.keys()
-			print(fruits)
-			# dict_keys(['apples', 'oranges', 'bananas'])
-		</code></pre>
-	</section>
-	<section><h3><code class="note">keys()</code> - dynamic view example</h3>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      fruits = prices.keys()
+      print(fruits)
+      # dict_keys(['apples', 'oranges', 'bananas'])
+    </code></pre>
+  </section>
+  <section><h3><code class="note">keys()</code> - dynamic view example</h3>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			# get prices keys view:
-			prices_keys = prices.keys()
-			print("before:", prices_keys)
+      # get prices keys view:
+      prices_keys = prices.keys()
+      print("before:", prices_keys)
 
-			# add new key-value pair:
-			prices["new_key"]="new value"
+      # add new key-value pair:
+      prices["new_key"]="new value"
 
-			# check if prices_keys contains the new key
-			print("after:", prices_keys)
-		</code></pre>
-		<pre><code rel="Output" class="bash" data-noescape>
-			before: dict_keys(['bananas', 'oranges', 'apples'])
-			after: dict_keys(['new_key', 'bananas', 'oranges', 'apples'])
-		</code></pre>
-	</section>
-	<section><h3>Get all dictionary values: <code class="note">values()</code></h3>
-		<dl class="fa" style="font-size: .9em">
-			<dt>the <code>values()</code> method of a dictionary returns a <em><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">dict view object</a></em>  dictionary values</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      # check if prices_keys contains the new key
+      print("after:", prices_keys)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      before: dict_keys(['bananas', 'oranges', 'apples'])
+      after: dict_keys(['new_key', 'bananas', 'oranges', 'apples'])
+    </code></pre>
+  </section>
+  <section><h3>Get all dictionary values: <code class="note">values()</code></h3>
+    <dl class="fa" style="font-size: .9em">
+      <dt>the <code>values()</code> method of a dictionary returns a <em><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">dict view object</a></em>  dictionary values</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			price_list = prices.values()
-			print(price_list)
-			# dict_values([2.5, 2.43, 3.5])
-		</code></pre>
-	</section>
-	<section><h3><code class="note">values()</code> - dynamic view example</h3>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      price_list = prices.values()
+      print(price_list)
+      # dict_values([2.5, 2.43, 3.5])
+    </code></pre>
+  </section>
+  <section><h3><code class="note">values()</code> - dynamic view example</h3>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			# get prices values view:
-			prices_values = prices.values()
-			print("before:", prices_values)
+      # get prices values view:
+      prices_values = prices.values()
+      print("before:", prices_values)
 
-			# change a value:
-			prices["oranges"]=100
+      # change a value:
+      prices["oranges"]=100
 
-			# check if prices_values reflects the change:
-			print("after:", prices_values)
-		</code></pre>
-		<pre><code rel="Output" class="bash" data-noescape>
-			before: dict_values([3.5, 2.5, 2.43])
-			after: dict_values([3.5, 2.5, 100])
-		</code></pre>
-	</section>
-	<section><h3>Get all dictionary items (key-value pairs): <code class="note">items()</code></h3>
-		<dl class="fa" style="font-size: .9em">
-			<dt>the <code>items()</code> method of a dictionary returns a <em><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">dict view object</a></em> of dictionary items, i.e. a view of <span class="note">key-value pairs</span></dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      # check if prices_values reflects the change:
+      print("after:", prices_values)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      before: dict_values([3.5, 2.5, 2.43])
+      after: dict_values([3.5, 2.5, 100])
+    </code></pre>
+  </section>
+  <section><h3>Get all dictionary items (key-value pairs): <code class="note">items()</code></h3>
+    <dl class="fa" style="font-size: .9em">
+      <dt>the <code>items()</code> method of a dictionary returns a <em><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">dict view object</a></em> of dictionary items, i.e. a view of <span class="note">key-value pairs</span></dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			prices_items = prices.items()
-			print(prices_items)
-		</code></pre>
-		<pre><code rel="Output" class="bash" data-noescape>
-			dict_items([('bananas', 3.5), ('apples', 2.5), ('oranges', 2.43)])
-		</code></pre>
-	</section>
-	<section><h3><code class="note">items()</code> - dynamic view example</h3>
-		<pre><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      prices_items = prices.items()
+      print(prices_items)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      dict_items([('bananas', 3.5), ('apples', 2.5), ('oranges', 2.43)])
+    </code></pre>
+  </section>
+  <section><h3><code class="note">items()</code> - dynamic view example</h3>
+    <pre><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			# get prices items view:
-			prices_items = prices.items()
-			print("before:", prices_items)
+      # get prices items view:
+      prices_items = prices.items()
+      print("before:", prices_items)
 
-			# remove an item:
-			del prices["oranges"]
+      # remove an item:
+      del prices["oranges"]
 
-			# check if prices_items reflects the change:
-			print("after:", prices_items)
-		</code></pre>
-		<pre><code rel="Output" class="bash" data-noescape>
-			before: dict_items([('apples', 2.5), ('oranges', 2.43), ('bananas', 3.5)])
-			after: dict_items([('apples', 2.5), ('bananas', 3.5)])
-		</code></pre>
-	</section>
-	<section><h3>dict views in Python2</h3>
-		<dl class="fa">
-			<dt>The <code>keys()</code>, <code>values()</code> and <code>items()</code> methods return view objects only in <span class="note">Python3</span>. In Python2 they return lists.</dt>
-			<dt>The <span class="note">Python2</span> equivalents are <code>viewkeys()</code>, <code>viewvalues()</code> and <code>viewitems()</code> methods.</dt>
-		</dl>
-	</section>
-	<section><h3>Iterate over dictionary keys:</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			for key in dict_name:
-				# do something with a key
+      # check if prices_items reflects the change:
+      print("after:", prices_items)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      before: dict_items([('apples', 2.5), ('oranges', 2.43), ('bananas', 3.5)])
+      after: dict_items([('apples', 2.5), ('bananas', 3.5)])
+    </code></pre>
+  </section>
+  <section><h3>dict views in Python2</h3>
+    <dl class="fa">
+      <dt>The <code>keys()</code>, <code>values()</code> and <code>items()</code> methods return view objects only in <span class="note">Python3</span>. In Python2 they return lists.</dt>
+      <dt>The <span class="note">Python2</span> equivalents are <code>viewkeys()</code>, <code>viewvalues()</code> and <code>viewitems()</code> methods.</dt>
+    </dl>
+  </section>
+  <section><h3>Iterate over dictionary keys:</h3>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+      for key in dict_name:
+        # do something with a key
 
-			# this is equivalent to:
-			for key in dict_name.keys():
-				# do something with a key
-		</code></pre>
-		<pre style="font-size: .5em"><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      # this is equivalent to:
+      for key in dict_name.keys():
+        # do something with a key
+    </code></pre>
+    <pre style="font-size: .5em"><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			for k in prices:
-			  print(k)
-		</code></pre>
-		<pre style="font-size: .5em"><code rel="Output" class="bash" data-noescape>
-			bananas
-			apples
-			oranges
-		</code></pre>
-	</section>
-	<section><h3>Iterate over dictionary values:</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			for value in dict_name.values():
-				# do something with a value
-		</code></pre>
-		<pre style="font-size: .5em"><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      for k in prices:
+        print(k)
+    </code></pre>
+    <pre style="font-size: .5em"><code rel="Output" class="bash" data-noescape>
+      bananas
+      apples
+      oranges
+    </code></pre>
+  </section>
+  <section><h3>Iterate over dictionary values:</h3>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+      for value in dict_name.values():
+        # do something with a value
+    </code></pre>
+    <pre style="font-size: .5em"><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			for v in prices.values():
-			  print(v)
-		</code></pre>
-		<pre style="font-size: .5em"><code rel="Output" class="bash" data-noescape>
-			2.43
-			3.5
-			2.5
-		</code></pre>
-	</section>
-	<section><h3>Iterate over keys and values</h3>
-		<dl class="fa" style="font-size: .9em">
-			<dt class="note">This is the most often used and the most Pythonic construct for looping over dictionaries</dt>
-		</dl>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			for key, value in dict_name.items():
-				# do something with a key
-				# do something with a value
-		</code></pre>
-		<pre style="font-size: .5em"><code rel="Python" class="python">
-			prices = {
-			    "apples": 2.50,
-			    "oranges": 2.43,
-			    "bananas": 3.50
-			}
+      for v in prices.values():
+        print(v)
+    </code></pre>
+    <pre style="font-size: .5em"><code rel="Output" class="bash" data-noescape>
+      2.43
+      3.5
+      2.5
+    </code></pre>
+  </section>
+  <section><h3>Iterate over keys and values</h3>
+    <dl class="fa" style="font-size: .9em">
+      <dt class="note">This is the most often used and the most Pythonic construct for looping over dictionaries</dt>
+    </dl>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+      for key, value in dict_name.items():
+        # do something with a key
+        # do something with a value
+    </code></pre>
+    <pre style="font-size: .5em"><code rel="Python" class="python">
+      prices = {
+          "apples": 2.50,
+          "oranges": 2.43,
+          "bananas": 3.50
+      }
 
-			for fruit, price in prices.items():
-			    print("{} - {}".format(fruit, price))
-		</code></pre>
-		<pre style="font-size: .5em"><code rel="Output" class="bash" data-noescape>
-			apples - 2.5
-			oranges - 2.43
-			bananas - 3.5
-		</code></pre>
-	</section>
-	<section><h3>More on dictionaries</h3>
-		<dl class="fa">
-			<dt><a href="https://docs.python.org/3.3/library/stdtypes.html#dict"><code>dict</code> class</a> @python docs</dt>
-			<dt><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">Dictionary view objects</a> @python docs</dt>
-		</dl>
-	</section>
+      for fruit, price in prices.items():
+          print("{} - {}".format(fruit, price))
+    </code></pre>
+    <pre style="font-size: .5em"><code rel="Output" class="bash" data-noescape>
+      apples - 2.5
+      oranges - 2.43
+      bananas - 3.5
+    </code></pre>
+  </section>
+  <section><h3>More on dictionaries</h3>
+    <dl class="fa">
+      <dt><a href="https://docs.python.org/3.3/library/stdtypes.html#dict"><code>dict</code> class</a> @python docs</dt>
+      <dt><a href="https://docs.python.org/3/library/stdtypes.html#dict-views">Dictionary view objects</a> @python docs</dt>
+    </dl>
+  </section>
 </section>
 
 <section><h1>Sets</h1></section>
 <section><h2>Sets</h2>
-	<section><h3>What is a Set?</h3>
-		<dl class="fa">
-			<dt>An <span class="note">unordered</span> collection of <span class="note">unique and immutable</span> objects.</dt>
-			<dt>Note that the set itself is a <span class="note">mutable object</span>.</dt>
-			<dt>Set data type in Python is an implementation of the sets as they are defined in mathematics.</dt>
-		</dl>
-	</section>
-	<section><h3>Sets vs Dictionaries</h3>
-		<dl class="fa">
-			<dt>Similarities:</dt>
-			<dd>Both are <span class="note">unordered</span> collection of objects (values).</dd>
-			<dd>Both are <span class="note">mutable</span> (add/remove/modify elements)</dd>
-			<dd>Both use <span class="note">curly braces</span> for their literals.</dd>
-			<dt>Differences:</dt>
-			<dd>A Set can not contain <span class="note">duplicate items</span>! Dictionaries can.</dd>
-			<dd>A dictionary is a <span class="note">collection of <code>key:value</code> pairs</span>.</dd>
-			<dd>Set is just a <span class="note">values collection</span></dd>
-		</dl>
-	</section>
-	<section><h3>Syntax</h3>
-		<pre><code rel="Syntax" class="shell" data-noescape>
-			set = {<em>value1</em>, <em>value2</em>, <em>valueN</em>}
-		</code></pre>
-		<dl class="fa">
-			<dt>There is <span class="note">no order</span> in a set! We can not say if 'value1' pair will be before 'value2'.</dt>
-			<dt><span class="note">No duplicate items</span> are allowed. If we define a set with duplicate items, only one of them will be present in the set. Others are ignored.</dt>
-		</dl>
-	</section>
-	<section><h3>Simple set - example</h3>
-		<pre><code rel="Python" class="python">
-			int_numbers = {1, 2, 3, 4, 5}
-			print(int_numbers)
-			print(type(int_numbers))
+  <section><h3>What is a Set?</h3>
+    <dl class="fa">
+      <dt>An <span class="note">unordered</span> collection of <span class="note">unique and immutable</span> objects.</dt>
+      <dt>Note that the set itself is a <span class="note">mutable object</span>.</dt>
+      <dt>Set data type in Python is an implementation of the sets as they are defined in mathematics.</dt>
+    </dl>
+  </section>
+  <section><h3>Sets vs Dictionaries</h3>
+    <dl class="fa">
+      <dt>Similarities:</dt>
+      <dd>Both are <span class="note">unordered</span> collection of objects (values).</dd>
+      <dd>Both are <span class="note">mutable</span> (add/remove/modify elements)</dd>
+      <dd>Both use <span class="note">curly braces</span> for their literals.</dd>
+      <dt>Differences:</dt>
+      <dd>A Set can not contain <span class="note">duplicate items</span>! Dictionaries can.</dd>
+      <dd>A dictionary is a <span class="note">collection of <code>key:value</code> pairs</span>.</dd>
+      <dd>Set is just a <span class="note">values collection</span></dd>
+    </dl>
+  </section>
+  <section><h3>Syntax</h3>
+    <pre><code rel="Syntax" class="shell" data-noescape>
+      set = {<em>value1</em>, <em>value2</em>, <em>valueN</em>}
+    </code></pre>
+    <dl class="fa">
+      <dt>There is <span class="note">no order</span> in a set! We can not say if 'value1' pair will be before 'value2'.</dt>
+      <dt><span class="note">No duplicate items</span> are allowed. If we define a set with duplicate items, only one of them will be present in the set. Others are ignored.</dt>
+    </dl>
+  </section>
+  <section><h3>Simple set - example</h3>
+    <pre><code rel="Python" class="python">
+      int_numbers = {1, 2, 3, 4, 5}
+      print(int_numbers)
+      print(type(int_numbers))
 
-			# {1, 2, 3, 4, 5}
-			# &lt;class 'set'&gt;
-		</code></pre>
-	</section>
-	<section><h3>No set of mutable data - example</h3>
-		<pre><code rel="Python" class="python">
-			set_of_numbers = {1,2,3}
-			print(set_of_numbers) #{1, 2, 3}
+      # {1, 2, 3, 4, 5}
+      # &lt;class 'set'&gt;
+    </code></pre>
+  </section>
+  <section><h3>No set of mutable data - example</h3>
+    <pre><code rel="Python" class="python">
+      set_of_numbers = {1,2,3}
+      print(set_of_numbers) #{1, 2, 3}
 
-			set_of_strings = {"a", "b"}
-			print(set_of_strings) #{'b', 'a'}
+      set_of_strings = {"a", "b"}
+      print(set_of_strings) #{'b', 'a'}
 
-			set_of_imutables = {"a", 1, "b", 2, 3}
-			print(set_of_imutables) #{'a', 'b', 2, 3, 1}
+      set_of_imutables = {"a", 1, "b", 2, 3}
+      print(set_of_imutables) #{'a', 'b', 2, 3, 1}
 
-			set_of_mutables = { [1,2,3], ["a", "b"] }
-			print(set_of_imutables) #TypeError: unhashable type: 'list'
-		</code></pre>
-	</section>
-	<section><h3>Ignoring duplicate items - example 1</h3>
-		<pre><code rel="Python" class="python">
-			int_dup_numbers = {1, 2, 3, 1, 2, 4, 3, 5, 1, 2, 3}
-			print(int_dup_numbers)
+      set_of_mutables = { [1,2,3], ["a", "b"] }
+      print(set_of_imutables) #TypeError: unhashable type: 'list'
+    </code></pre>
+  </section>
+  <section><h3>Ignoring duplicate items - example 1</h3>
+    <pre><code rel="Python" class="python">
+      int_dup_numbers = {1, 2, 3, 1, 2, 4, 3, 5, 1, 2, 3}
+      print(int_dup_numbers)
 
-			# {1, 2, 3, 4, 5, 6}
-		</code></pre>
-	</section>
-	<section><h3>Ignoring duplicate items - example 2</h3>
-		<pre><code rel="Python" class="python">
-			int_numbers = {1, 2, 3, 4, 5}
-			int_dup_numbers = {1, 2, 3, 1, 2, 4, 3, 5, 1, 2, 3}
+      # {1, 2, 3, 4, 5, 6}
+    </code></pre>
+  </section>
+  <section><h3>Ignoring duplicate items - example 2</h3>
+    <pre><code rel="Python" class="python">
+      int_numbers = {1, 2, 3, 4, 5}
+      int_dup_numbers = {1, 2, 3, 1, 2, 4, 3, 5, 1, 2, 3}
 
-			print(int_numbers == int_dup_numbers)
+      print(int_numbers == int_dup_numbers)
 
-			# True
-		</code></pre>
-	</section>
+      # True
+    </code></pre>
+  </section>
 </section>
 
 <section><h1>Basic sets operations</h1></section>
 <section><h2>Basic sets operations</h2>
-	<section><h3>Sets Union</h3>
-		<a href="images/Union_of_sets_A_and_B.svg.png"><img src="images/Union_of_sets_A_and_B.svg.png" style="height: 50vh;"></a>
-		<p>Returns new set, which elements are in either sets.</p>
-	</section>
-	<section><h3>Sets Union - example</h3>
-		<p>Pipe operator <code>|</code> or method <code>union</code> can be used</p>
-		<pre><code rel="Python" class="python">
-			set1 = {1, 2, 3, 4}
-			set2 = {5, 4}
+  <section><h3>Sets Union</h3>
+    <a href="images/Union_of_sets_A_and_B.svg.png"><img src="images/Union_of_sets_A_and_B.svg.png" style="height: 50vh;"></a>
+    <p>Returns new set, which elements are in either sets.</p>
+  </section>
+  <section><h3>Sets Union - example</h3>
+    <p>Pipe operator <code>|</code> or method <code>union</code> can be used</p>
+    <pre><code rel="Python" class="python">
+      set1 = {1, 2, 3, 4}
+      set2 = {5, 4}
 
-			union1 = set1 | set2
-			union2 = set1.union(set2)
-			print(union1)
-			print(union2)
+      union1 = set1 | set2
+      union2 = set1.union(set2)
+      print(union1)
+      print(union2)
 
-			# {1, 2, 3, 4, 5}
-			# {1, 2, 3, 4, 5}
-		</code></pre>
-	</section>
+      # {1, 2, 3, 4, 5}
+      # {1, 2, 3, 4, 5}
+    </code></pre>
+  </section>
 
-	<section><h3>Sets Intersection</h3>
-		<a href="images/Intersection_of_sets_A_and_B.svg.png"><img src="images/Intersection_of_sets_A_and_B.svg.png" style="height: 50vh;"></a>
-		<p>Returns new set, which elements belong to both sets.</p>
-	</section>
-	<section><h3>Sets Intersection - example</h3>
-		<p>Ampersand operator <code>&</code> or method <code>intersection</code> can be used</p>
-		<pre><code rel="Python" class="python">
-			set1 = {1, 2, 3, 4}
-			set2 = {5, 4}
+  <section><h3>Sets Intersection</h3>
+    <a href="images/Intersection_of_sets_A_and_B.svg.png"><img src="images/Intersection_of_sets_A_and_B.svg.png" style="height: 50vh;"></a>
+    <p>Returns new set, which elements belong to both sets.</p>
+  </section>
+  <section><h3>Sets Intersection - example</h3>
+    <p>Ampersand operator <code>&</code> or method <code>intersection</code> can be used</p>
+    <pre><code rel="Python" class="python">
+      set1 = {1, 2, 3, 4}
+      set2 = {5, 4}
 
-			intersec1 = set1 & set2
-			intersec2 = set1.intersection(set2)
-			print(intersec1)
-			print(intersec2)
+      intersec1 = set1 & set2
+      intersec2 = set1.intersection(set2)
+      print(intersec1)
+      print(intersec2)
 
-			# {4}
-			# {4}
-		</code></pre>
-	</section>
+      # {4}
+      # {4}
+    </code></pre>
+  </section>
 
-	<section><h3>Sets Difference</h3>
-		<a href="images/Set_difference.svg"><img src="images/Set_difference.svg" style="height: 50vh;"></a>
-		<p>C = A - B, where C is a new set, which elements are the elements of A, which are not present in B</p>
-	</section>
-	<section><h3>Sets Difference - example</h3>
-		<p>Operator <code>-</code> or method <code>difference</code> can be used</p>
-		<pre><code rel="Python" class="python">
-			set1 = {1, 2, 3, 4, 5}
-			set2 = {5, 4}
+  <section><h3>Sets Difference</h3>
+    <a href="images/Set_difference.svg"><img src="images/Set_difference.svg" style="height: 50vh;"></a>
+    <p>C = A - B, where C is a new set, which elements are the elements of A, which are not present in B</p>
+  </section>
+  <section><h3>Sets Difference - example</h3>
+    <p>Operator <code>-</code> or method <code>difference</code> can be used</p>
+    <pre><code rel="Python" class="python">
+      set1 = {1, 2, 3, 4, 5}
+      set2 = {5, 4}
 
-			dif1 = set1.difference(set2)
-			dif2 = set1 - set2
-			print(dif1)
-			print(dif2)
+      dif1 = set1.difference(set2)
+      dif2 = set1 - set2
+      print(dif1)
+      print(dif2)
 
-			# {1, 2, 3}
-			# {1, 2, 3}
-		</code></pre>
-	</section>
+      # {1, 2, 3}
+      # {1, 2, 3}
+    </code></pre>
+  </section>
 
-	<section><h3>Sets Symmetric Difference</h3>
-		<a href="images/A_symmetric_minus_B.svg.png"><img src="images/A_symmetric_minus_B.svg.png" style="height: 50vh;"></a>
-		<p>C = A △ B, where C is a new set, which elements are either in sets A or B but not in both.</p>
-	</section>
-	<section><h3>Sets Symmetric Difference - example</h3>
-		<p>Pipe operator <code>|</code> or method <code>union</code> can be used</p>
-		<pre><code rel="Python" class="python">
-			set1 = {1, 2, 3, 4}
-			set2 = {5, 4}
+  <section><h3>Sets Symmetric Difference</h3>
+    <a href="images/A_symmetric_minus_B.svg.png"><img src="images/A_symmetric_minus_B.svg.png" style="height: 50vh;"></a>
+    <p>C = A △ B, where C is a new set, which elements are either in sets A or B but not in both.</p>
+  </section>
+  <section><h3>Sets Symmetric Difference - example</h3>
+    <p>Pipe operator <code>|</code> or method <code>union</code> can be used</p>
+    <pre><code rel="Python" class="python">
+      set1 = {1, 2, 3, 4}
+      set2 = {5, 4}
 
-			sym_dif = set1.symmetric_difference(set2)
-			print(sym_dif)
+      sym_dif = set1.symmetric_difference(set2)
+      print(sym_dif)
 
-			# {1, 2, 3, 5}
-		</code></pre>
-	</section>
-	<section><h3>More on sets</h3>
-		<p><a href="https://docs.python.org/3/library/stdtypes.html#set"><code>set</code> class in docs.python.org</a></p>
-	</section>
+      # {1, 2, 3, 5}
+    </code></pre>
+  </section>
+  <section><h3>More on sets</h3>
+    <p><a href="https://docs.python.org/3/library/stdtypes.html#set"><code>set</code> class in docs.python.org</a></p>
+  </section>
 </section>
 
 <section id="hw"><h1>Exercises</h1></section>
 <section id="task1"><h2>task1_best_students_scores.py</h2>
-	<section><h3>the task</h3>
-		<dl class="fa">
-			<dt>Represent the information given in next table in appropriate data structure, named <code>student_scores</code>.</dt>
-		</dl>
-		<a href="images/task1_student_with_high_score.png"><img src="images/task1_student_with_high_score.png" style="height: 50vh"></a>
-	</section>
-	<section><h3>the task</h3>
-		<dl class="fa">
-			<dt>From <code>student_scores</code> data, create a new data structure named <code>best_students_scores</code>, storing the information (name and score) only for students with scores greater than 4.00</dt>
-			<dt>Print out the names of the students from <code>best_students_scores</code></dt>
-		</dl>
-		<pre><code rel="Output" class="shell" data-noescape>
-			Ivan
-			Maria
-			Georgy
-		</code></pre>
-	</section>
+  <section><h3>the task</h3>
+    <dl class="fa">
+      <dt>Represent the information given in next table in appropriate data structure, named <code>student_scores</code>.</dt>
+    </dl>
+    <a href="images/task1_student_with_high_score.png"><img src="images/task1_student_with_high_score.png" style="height: 50vh"></a>
+  </section>
+  <section><h3>the task</h3>
+    <dl class="fa">
+      <dt>From <code>student_scores</code> data, create a new data structure named <code>best_students_scores</code>, storing the information (name and score) only for students with scores greater than 4.00</dt>
+      <dt>Print out the names of the students from <code>best_students_scores</code></dt>
+    </dl>
+    <pre><code rel="Output" class="shell" data-noescape>
+      Ivan
+      Maria
+      Georgy
+    </code></pre>
+  </section>
 </section>
-<section id="task2"><h2>task2_min_max_student_score</h2>
-	<section><h3>the task</h3>
-		<dl class="fa">
-			<dt>Using the same information as in Task1, i.e.</dt>
-		</dl>
-		<a href="images/task1_student_with_high_score.png"><img src="images/task1_student_with_high_score.png" style="height: 50vh"></a>
-	</section>
-	<section><h3>the task</h3>
-		<dl class="fa">
-			<dt>Print out <b>the name and score</b> of the student with maximum score</dt>
-			<dt>Print out <b>the name and score</b> of the student with minimum score</dt>
-		</dl>
-		<pre><code rel="Output" class="bash" data-noescape>
-			Maria - 5.5
-			Alex - 3.5
-		</code></pre>
-	</section>
+<section id="task2"><h2>task2_min_max_student_score.py</h2>
+  <section><h3>the task</h3>
+    <dl class="fa">
+      <dt>Using the same information as in Task1, i.e.</dt>
+    </dl>
+    <a href="images/task1_student_with_high_score.png"><img src="images/task1_student_with_high_score.png" style="height: 50vh"></a>
+  </section>
+  <section><h3>the task</h3>
+    <dl class="fa">
+      <dt>Print out <b>the name and score</b> of the student with maximum score</dt>
+      <dt>Print out <b>the name and score</b> of the student with minimum score</dt>
+    </dl>
+    <pre><code rel="Output" class="bash" data-noescape>
+      Maria - 5.5
+      Alex - 3.5
+    </code></pre>
+  </section>
 </section>
-<section id="task3"><h2>task3_simple_word_index</h2>
-	<section><h3>the task</h3>
-		<dl class="fa">
-			<dt>Make a program which will counts the words frequency (the count) of a given text</dt>
-		</dl>
-		<pre><code rel="Sample data" class="bash" data-noescape>
-			apple and banana one apple one banana
-			a red apple and a green apple
-		</code></pre>
-		<pre><code rel="Output" class="bash" data-noescape>
-			a - 2
-			green - 1
-			banana - 2
-			and - 2
-			one - 2
-			red - 1
-			apple - 4
-		</code></pre>
-	</section>
-	<section><h3>Notes</h3>
-		<dl class="fa">
-			<dt>For simplicity we will get the "words" as a space separated sequences in string.</dt>
-			<dt>To get that list of words we can use the <a href="https://docs.python.org/3/library/stdtypes.html#str.split"><code>str.split()</code></a> method, as shown:</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			text = "some words delimited by spaces"
-			words_list = text.split()
+<section id="task3"><h2>task3_simple_word_index.py</h2>
+  <section><h3>the task</h3>
+    <dl class="fa">
+      <dt>Make a program which will counts the words frequency (the count) of a given text</dt>
+    </dl>
+    <pre><code rel="Sample data" class="bash" data-noescape>
+      apple and banana one apple one banana
+      a red apple and a green apple
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      a - 2
+      green - 1
+      banana - 2
+      and - 2
+      one - 2
+      red - 1
+      apple - 4
+    </code></pre>
+  </section>
+  <section><h3>Notes</h3>
+    <dl class="fa">
+      <dt>For simplicity we will get the "words" as a space separated sequences in string.</dt>
+      <dt>To get that list of words we can use the <a href="https://docs.python.org/3/library/stdtypes.html#str.split"><code>str.split()</code></a> method, as shown:</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      text = "some words delimited by spaces"
+      words_list = text.split()
 
-			print(words_list)
-		</code></pre>
-		<pre><code rel="Output" class="bash" data-noescape>
-			['some', 'words', 'delimited', 'by', 'spaces']
-		</code></pre>
-	</section>
-	<section><h3 class="advanced">A more sophisticated output</h3>
-		<dl class="fa">
-			<dt>Display the words count as a table, sorted by the descending count of each word</dt>
-			<dt>Note that the first column width is equal to the length of the longest word</dt>
-		</dl>
-		<pre><code rel="Output" class="bash" data-noescape>
-			|apple |  4  |
-			|banana|  2  |
-			|one   |  2  |
-			|a     |  2  |
-			|and   |  2  |
-			|green |  1  |
-			|red   |  1  |
-		</code></pre>
-	</section>
+      print(words_list)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      ['some', 'words', 'delimited', 'by', 'spaces']
+    </code></pre>
+  </section>
+  <section><h3 class="advanced">A more sophisticated output</h3>
+    <dl class="fa">
+      <dt>Display the words count as a table, sorted by the descending count of each word</dt>
+      <dt>Note that the first column width is equal to the length of the longest word</dt>
+    </dl>
+    <pre><code rel="Output" class="bash" data-noescape>
+      |apple |  4  |
+      |banana|  2  |
+      |one   |  2  |
+      |a     |  2  |
+      |and   |  2  |
+      |green |  1  |
+      |red   |  1  |
+    </code></pre>
+  </section>
+</section>
+<section id="task4"><h2>task4_users_bills.py</h2>
+  <section><h3>the data</h3>
+  	<dl class="fa">
+  	  <dt>A simplified data for telecom users are stored as two relational tables:</dt>
+  	</dl>
+  	<pre><code rel="users_data table" class="bash" data-noescape>
+  	   id |  name   |   number
+  	   ---|---------|---------------
+  	   1  | "Maria" | "+39587111111"
+  	   2  | "Ivan"  | "+39587222222"
+  	   3  | "Asen"  | "+39587333333"
+  	</code></pre>
+  	<pre><code rel="users_bills table" class="bash" data-noescape>
+  		 id |  bill
+  		 ---|---------
+  		 1  | 25.50
+  		 2  | 30.48
+  		 3  |  5.98
+  	</code></pre>
+  </section>
+  <section><h3>the task</h3>
+  	<dl class="fa">
+  		<dt>Represent the data in appropriate data structures in order to:</dt>
+  		<dd>being able to add/remove records from each table</dd>
+  		<dd class="note">find and print the name of the user with highest bill</dd>
+  		<dd class="note">find and print the name of the user with lowest bill</dd>
+  	</dl>
+  	<pre><code rel="Output" class="bash" data-noescape>
+  		The user with highest bill - 30.48 is Ivan
+  		The user with lowest bill - 5.98 is Asen
+  	</code></pre>
+  </section>
 </section>
 
 <section><h2>Submission</h2>
-	<dl class="fa">
-		<dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
-		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-		<dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=dateAndTime">progressbg.python.course@gmail.com</a></dt>
-	</dl>
+  <dl class="fa">
+    <dt>Please, prefix your filenames/archive with your name initials, before sending.</dt>
+    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+    <dt>Send files to <a href="mailto:progressbg.python.course@gmail.com?Subject=dateAndTime">progressbg.python.course@gmail.com</a></dt>
+  </dl>
 </section>
 
 <section class="disclaimer" data-background="/ProgressBG-VC2-Python/outfit/images/for_slides/the_end_on_sand.jpg">
-	 <p>These slides are based on</p>
-	 <p>customised version of </p>
-	 <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-	 <p>framework</p>
+   <p>These slides are based on</p>
+   <p>customised version of </p>
+   <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+   <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-		</div>
-	</div>
-	<!-- Custom processing -->
-	<script src="/ProgressBG-VC2-Python/outfit/js/slides.js"></script>
-	<!-- external scripts -->
-	<script src="/ProgressBG-VC2-Python/lib/reveal.js/lib/js/head.min.js"></script>
-	<script src="/ProgressBG-VC2-Python/lib/reveal.js/js/reveal.js"></script>
-	 <!-- init reveal -->
-	<script>
-		// Full list of configuration options available at:
-		// https://github.com/hakimel/reveal.js#configuration
-		var highlightjsTabSize = '  ';
-		Reveal.initialize({
-			controls: true,
-			progress: true,
-			slideNumber: 'c/t',
-			keyboard: true,
-			history: true,
-			center: true,
-			width: 1024,
-			height: 850,
-			// Bounds for smallest/largest possible scale to apply to content
-			// minScale: .5,
-			maxScale: 1,
-			// slide transition
-			transition: 'concave', // none/fade/slide/convex/concave/zoom
-			// Factor of the display size that should remain empty around the content
-			margin: 0.1,
-			// shift+maous click to zoom in/out element
-			zoomKey: 'ctrl',
-			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-			// transition: Reveal.getQueryHash().transition || 'default'
-			// Optional reveal.js plugins
-			dependencies: [
-				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
-				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-				{ src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
-			]
-		});
-	</script>
+    </div>
+  </div>
+  <!-- Custom processing -->
+  <script src="/ProgressBG-VC2-Python/outfit/js/slides.js"></script>
+  <!-- external scripts -->
+  <script src="/ProgressBG-VC2-Python/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/ProgressBG-VC2-Python/lib/reveal.js/js/reveal.js"></script>
+   <!-- init reveal -->
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    var highlightjsTabSize = '  ';
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      history: true,
+      center: true,
+      width: 1024,
+      height: 850,
+      // Bounds for smallest/largest possible scale to apply to content
+      // minScale: .5,
+      maxScale: 1,
+      // slide transition
+      transition: 'concave', // none/fade/slide/convex/concave/zoom
+      // Factor of the display size that should remain empty around the content
+      margin: 0.1,
+      // shift+maous click to zoom in/out element
+      zoomKey: 'ctrl',
+      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      // transition: Reveal.getQueryHash().transition || 'default'
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '/ProgressBG-VC2-Python/lib/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
 </body>
 </html>
