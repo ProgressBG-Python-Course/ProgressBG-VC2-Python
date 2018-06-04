@@ -1,15 +1,7 @@
-text = """There is no pain you are receding
-A distant ship smoke on the horizon
-You are only coming through in waves
-Your lips move but I can't hear what you're saying
-When I was a child
-I caught a fleeting glimpse
-Out of the corner of my eye
-I turned to look but it was gone
-I cannot put my finger on it now
-The child is grown
-The dream is gone
-I have become comfortably numb."""
+text = '''
+apple and banana one apple one banana
+a red apple and a green apple
+'''
 
 def make_index(words):
   words = text.split( )
@@ -31,13 +23,18 @@ def find_max_word_length(index):
 
   return max_word_length
 
+def display_index(index):
+  for k,v in index.items():
+    print("{} - {}".format(k,v))
+
 # print sorted by values
-def display_index(index, max_word_length):
+def display_sorted_index(index, max_word_length):
   for item in sorted(index.items(), key=lambda t:t[1], reverse=True):
-    print("|{word:<{width}s}|{count:^5d}|".format(
-      word=item[0], width=max_word_length, count=item[1]))
+    print("|{word:<{word_width}}|{count:^{count_width}}|".format(
+      word=item[0], word_width=max_word_length, count=item[1], count_width=5))
 
 index = make_index(text)
 max_word_length = find_max_word_length(index)
-print("max_word_length", max_word_length)
-display_index(index, max_word_length)
+# print("max_word_length", max_word_length)
+display_sorted_index(index, max_word_length)
+# display_index(index)

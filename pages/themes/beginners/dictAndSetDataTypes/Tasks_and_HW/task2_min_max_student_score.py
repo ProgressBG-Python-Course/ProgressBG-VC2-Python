@@ -12,4 +12,8 @@ scores = list(students.values())
 max_score = max(scores)
 max_score_index = scores.index(max_score)
 
+min_score = min(scores)
+min_score_index = scores.index(min_score)
+
 print("{} - {}".format(names[max_score_index], max_score))
+print("{} - {}".format(names[min_score_index], min_score))
