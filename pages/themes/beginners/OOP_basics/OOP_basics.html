@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 	<!-- css & themes include -->
 	<link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
-	<link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/dark.css" id="theme">
+	<link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/projector.css" id="theme">
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement( 'link' );
@@ -54,7 +54,7 @@
 ##################### SLIDES START #####################
 ########################################################
 -->
-<section><h1>OOP in Python</h1></section>
+<section data-min-total="160"><h1>OOP in Python</h1></section>
 <section data-transition="zoom">
 	<!-- linkedin badge -->
 	<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
@@ -79,7 +79,7 @@
 	</section>
 </section>
 
-<section><h1>Object-oriented Programming Paradigm</h1></section>
+<section data-min="5"><h1>Object-oriented Programming Paradigm</h1></section>
 <section><h2>Object-oriented Programming Paradigm</h2>
 	<section><h3>A step over Procedural Programming</h3>
 		<dl class="fa">
@@ -92,7 +92,7 @@
 	<section><h3>The benefits</h3>
 		<dl class="fa">
 			<dt>A higher level of abstraction for solving real-life problems.</dt>
-			<dt>The software system can think in therms of objects, communicating with each other.</dt>
+			<dt>The software system can be think in therms of objects, communicating with each other.</dt>
 			<dt>Objects are reusable software components, as each encapsulates the data and logic for its operation. A black-box which do what it has to do.</dt>
 		</dl>
 	</section>
@@ -101,7 +101,7 @@
 	</section>
 </section>
 
-<section><h1>OOP - Main Concepts</h1></section>
+<section data-min="10"><h1>OOP - Main Concepts</h1></section>
 <section><h2>OOP - Main Concepts</h2>
 	<section><h3>Class</h3>
 		<dl class="fa">
@@ -127,7 +127,7 @@
 </section>
 
 
-<section><h1>Classes and Objects in Python</h1></section>
+<section data-min="10"><h1>Classes and Objects in Python</h1></section>
 <section><h2>Classes and Objects in Python</h2>
 	<section><h3>Minimal Class definition</h3>
 		<p>The minimal class definition in Python looks like:</p>
@@ -147,6 +147,10 @@
 			object_name = ClassName()
 		</code></pre>
 		<pre><code rel="Python" class="python">
+			# create Person class:
+			class Person:
+				pass
+
 			# create objects of class Person:
 			pesho = Person()
 			maria = Person()
@@ -167,17 +171,21 @@
 			maria = Person()
 			pesho = Person()
 
-			print( maria == pesho)
-			#False
+			print( type(pesho) == type(maria) )
+			print(pesho == maria )
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			True
+			False
 		</code></pre>
 	</section>
 </section>
 
-<section><h1>Attributes</h1></section>
+<section data-min="10"><h1>Attributes</h1></section>
 <section><h2>Attributes</h2>
 	<section><h3>Overview</h3>
 		<dl class="fa">
-			<dt>The attributes describes an object's characteristics.</dt>
+			<dt>The <span class="note">attributes</span> describes an object's characteristics. I.e. <span class="note">specific data</span> which characterize the object.</dt>
 			<dt>Usually, objects from same class, have same attributes, but with different values.</dt>
 			<dt>In python,  we can dynamically create arbitrary new attributes for existing objects</dt>
 		</dl>
@@ -204,9 +212,9 @@
 		<p>As we'll see later, this is not the proper way <span class="note"> to create</span> object's attributes in Python. This is an example of dot notation, used to <span class="note">access</span> object's attributes</p>
 	</section>
 	<section><h3 class="advanced">Attributes - internal</h3>
-		<dl class="fa">
+		<dl class="fa" style="font-size: .8em">
 			<dt>Attributes are stored internally in a dictionary structure</dt>
-			<dt>Each object has associated dictionary attribute, named <code>__dict__</code>, which store an object's (writeable) attributes</dt>
+			<dt>Each object has associated dictionary attribute, named <code>__dict__</code>, which stores an object's (writeable) attributes</dt>
 		</dl>
 		<pre><code rel="Python" class="python">
 			class Person:
@@ -219,7 +227,9 @@
 			maria.age = 100
 
 			print(maria.__dict__)
-			# {'name': 'Maria', 'age': 100}
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			{'name': 'Maria', 'age': 100}
 		</code></pre>
 	</section>
 	<section><h3>Class Attributes</h3>
@@ -236,17 +246,21 @@
 
 			print(maria.name, maria.age)
 			print(pesho.name, pesho.age)
-
-			# Anonymous 100
-			# Anonymous 100
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			Anonymous 100
+			Anonymous 100
 		</code></pre>
 	</section>
 </section>
 
-<section><h1>Methods</h1></section>
+<section data-min="10"><h1>Methods</h1></section>
 <section><h2>Methods</h2>
 	<section><h3>Overview</h3>
-		<p class="note" style="font-size: 1.8em">A method is a function that <b>"belongs to"</b> an object.</p>
+		<dl class="fa">
+			<dt>A method is a function that <span class="note">belongs to</span> a class.</dt>
+			<dt>Class methods specify the class <span class="note">behaviour</span></dt>
+		</dl>
 	</section>
 	<section><h3>Syntax</h3>
 		<pre><code rel="Syntax" class="python">
@@ -299,7 +313,9 @@
 	</section>
 </section>
 
-<section><h1>Class Constructor <br><br>the <code class="note">__init__()</code> method</h1></section>
+<section data-min="10"><h1>Class Constructor
+	<br><br>the <code class="note">__init__()</code> method</h1>
+</section>
 <section><h2><code class="note">__init__()</code> method</h2>
 	<section><h3>What is a Class Constructor</h3>
 		<dl class="fa">
@@ -358,7 +374,7 @@
 	</section>
 </section>
 
-<section><h1>Magic (dunder) methods</h1></section>
+<section data-min="15"><h1>Magic (dunder) methods</h1></section>
 <section><h2>Magic (dunder) methods</h2>
 	<section>
 		<dl class="fa">
@@ -430,7 +446,7 @@
 	</section>
 </section>
 
-<section><h1>Exercises on Class Constructor and dunder methods</h1></section>
+<section data-min="15"><h1>Exercises on Class Constructor and dunder methods</h1></section>
 <section><h2>Exercises on Class Constructor and dunder methods</h2>
 	<section><h3>The BankAccount Class</h3>
 		<dl class="fa">
@@ -457,7 +473,7 @@
 	</section>
 </section>
 
-<section><h1>Encapsulation and Data Hiding</h1></section>
+<section data-min="10"><h1>Encapsulation and Data Hiding</h1></section>
 <section><h2>Encapsulation and Data Hiding</h2>
 	<section><h3>Python's Way - Conventions</h3>
 		<table style="font-size: .8em">
@@ -510,7 +526,7 @@
 	</section>
 </section>
 
-<section><h1>Inspecting Classes and Objects</h1></section>
+<section data-min="10"><h1>Inspecting Classes and Objects</h1></section>
 <section><h2>Inspecting Classes and Objects</h2>
 	<section><h3><code>__dict__ - revealing object's dictionary</code></h3>
 		<pre><code rel="Syntax" class="python">
@@ -547,10 +563,51 @@
 			print( maria.__dir__() )
 		</code></pre>
 	</section>
+	<section><h3><code>id()</code> - object identity</h3>
+		<dl class="fa">
+			<dt>The built-in <code>id()</code> functions returns the "identity" of an object.</dt>
+			<dd>an integer which is guaranteed to be unique and constant for this object during its lifetime</dd>
+			<dd>In CPython it is the address of memory where the object lives</dd>
+		</dl>
+	</section>
+	<section><h3><code>id()</code> - example</h3>
+		<pre><code rel="Python" class="python">
+			x = 42
+			y = x
+
+			print( id(x) )
+			print( id(y) )
+		</code></pre>
+		<pre><code rel="OUTPUT" class="bash" data-noescape>
+			10920736
+			10920736
+		</code></pre>
+	</section>
 </section>
 
+<section data-min="15"><h1>Variables names and values - deep look</h1></section>
+<section><h2>Variables names and values - deep look</h2>
+  <section><h3>How assignment works?</h3>
+  	<dl class="fa">
+  		<dt><code>name = value</code></dt>
+  		<dt class="note">Names are references to values</dt>
+  		<dd>Assignment <span class="note">binds</span> a symbolic name (on the left side) with a value object (on the right side)</dd>
+  		<dt class="note">Many names can refer to one value.</dt>
+  		<dt class="note">Assignment never copies data</dt>
+  	</dl>
+  </section>
+  <section><h3>How assignment works?</h3>
+  	<dl class="fa">
+  		<dt>LHS = RHS</dt>
+  		<dd>The RHS value object is created somewhere in memory</dd>
+  		<dd>The LHS is set to refer to that object</dd>
+  		<dt>LHS can be variables names or list items or dictionary values and so on.</dt>
+  	</dl>
+  </section>
+  <section><h3>garbage collection (reference counting)</h3></section>
+</section>
 
-<section><h1>Resources</h1></section>
+<section data-min="5"><h1>Resources</h1></section>
 <section><h2>YouTube Videos</h2>
 	<section><h3>Python Classes and Objects - John Philip Jones</h3>
 		<iframe src="https://www.youtube.com/embed/AaIdperUu-A?list=PL6lxxT7IdTxEloArZ2ZSRWCy5jQpD5VtT" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

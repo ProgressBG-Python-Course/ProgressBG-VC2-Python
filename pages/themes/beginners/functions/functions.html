@@ -310,7 +310,8 @@
 	</section>
 	<section><h3 class="advanced">Variable Number of Positional Arguments (*args)</h3>
 		<dl class="fa">
-			<dt>You can define a function with <span class="note">variable number of parameters</span> if you <span class="note">unpack</span> them in a tuple with the <span class="note">*</span> (star) operator.</dt>
+			<dt>You can define a function to take <span class="note">variable number of arguments</span> if you use the <span class="note">*</span> (star) operator in front a parameter name.</dt>
+			<dt>Thus, the parameter will receive the arguments in a tuple:</dt>
 		</dl>
 		<pre><code rel="Python" class="python">
 			def add(*args):
@@ -326,7 +327,7 @@
 		</code></pre>
 		<p>The name <code>args</code> can be any valid variable name, but its a convention to name the unpacked arguments with <code>args</code></p>
 	</section>
-	<section><h3 class="advanced">Variable Number of Positional Parameters (*args)</h3>
+	<section><h3 class="advanced">Variable Number of Positional Arguments (*args)</h3>
 		<p>Variable arguments must follow the positional arguments:</p>
 		<pre><code rel="Python" class="python">
 			def add(p1, *args):
@@ -342,9 +343,37 @@
 			# 1, (2, 3, 4)
 		</code></pre>
 	</section>
-	<section><h3 class="advanced">Variable Number of Keyword Parameters</h3>
+	<section><h3 class="advanced">Unpacking sequence into positional parameters</h3>
 		<dl class="fa">
-			<dt>You can use <code class="note">**</code> (double stars) to unpack dictionary into keyword parameters.</dt>
+			<dt>You can unpack a list/tuple passed as argument into listed positional parameters with the <code>*</code> operator</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			def my_func(p1,p2,p3):
+				print(p1, p2, p3)
+
+			args = [1,2,3]
+			my_func(*args)
+			# 1 2 3
+		</code></pre>
+		<p>Note, that if you miss the star in <code>my_func(*[1,2,3])</code>, Python will assign the whole list <code>[1,2,3]</code> to <code>p1</code>, and the rest of parameters will receive no value. That will throw an error!</p>
+	</section>
+	<section><h3 class="advanced">Variable Number of Keyword Arguments</h3>
+		<dl class="fa">
+			<dt>You can use <code class="note">**</code> (double stars) in front of parameter name which will receive a variable number of keyword parameters into a dictionary.</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			def signup(**kwargs):
+			  for k,v in kwargs.items():
+			    print("{} - {}".format(k,v))
+
+
+			signup(user="ada", age=28)
+			signup(user="ada", age=28, town="london")
+		</code></pre>
+	</section>
+	<section><h3 class="advanced">Unpacking dictionary into named arguments</h3>
+		<dl class="fa">
+			<dt>You can use <code class="note">**</code> (double stars) to unpack dictionary into named arguments.</dt>
 		</dl>
 		<pre><code rel="Python" class="python">
 			def menu_print(fruit, price):
@@ -359,20 +388,7 @@
 			# apple...............2.50
 		</code></pre>
 	</section>
-	<section><h3 class="advanced">Unpacking arguments into positional parameters</h3>
-		<dl class="fa">
-			<dt>You can unpack a list/tuple passed as argument into listed positional parameters with <code>*</code> operator</dt>
-		</dl>
-		<pre><code rel="Python" class="python">
-			def my_func(p1,p2,p3):
-				print(p1, p2, p3)
 
-			args = [1,2,3]
-			my_func(*args)
-			# 1 2 3
-		</code></pre>
-		<p>Note, that if you miss the star in <code>my_func(*[1,2,3])</code>, Python will assign the whole list <code>[1,2,3]</code> to <code>p1</code>, and the rest of parameters will receive no value. That will throw an error!</p>
-	</section>
 </section>
 
 
