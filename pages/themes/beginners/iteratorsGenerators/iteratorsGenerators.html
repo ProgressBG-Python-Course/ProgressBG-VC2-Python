@@ -227,8 +227,8 @@
 </section>
 
 
-<section><h1>Generators</h1></section>
-<section><h2>Generators</h2>
+<section><h1><span class="advanced"></span>Generators</h1></section>
+<section><h2 class="advanced">Generators</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
       <dt>A Generator is a function that works as a factory for iterators.</dt>
@@ -360,8 +360,33 @@
   </section>
 </section>
 
+
 <section id="hw"><h1>Exercises</h1></section>
-<section><h2>Task1: Even Numbers generator</h2>
+<section><h2>Task1: Even Numbers Iterable</h2>
+  <section><h3>The Task</h3>
+    <dl class="fa">
+      <dt>Write an EvensRange iterable class, such that its objects can be used in for loops, iterating over the even numbers in specified [min, max] range.</dt>
+    </dl>
+    <pre><code rel="Python" class="shell" data-noescape>
+      class EvensRange:
+        pass
+
+      evens_range = EvensRange(1,10)
+
+      for i in evens_range(1,10):
+        print(i)
+
+      ### expected result
+      #2
+      #4
+      #6
+      #8
+      #10
+    </code></pre>
+  </section>
+</section>
+<section id="hw"><h1>Exercises</h1></section>
+<section><h2>Task2: Even Numbers generator</h2>
   <section><h3>The Task</h3>
     <dl class="fa">
       <dt>Write a generator function, such that will yield an even number in pre-given interval</dt>
@@ -382,7 +407,7 @@
     </code></pre>
   </section>
 </section>
-<section><h2>Cyrillic letter generator</h2>
+<section><h2>Task3: Cyrillic letter generator</h2>
   <section><h3>The Task</h3>
     <dl class="fa">
       <dt>Define a generator function which will yield a Cyrillic letter, starting from 'А', to 'Я'</dt>
