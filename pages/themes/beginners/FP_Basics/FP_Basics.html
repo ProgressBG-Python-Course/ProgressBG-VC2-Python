@@ -219,6 +219,32 @@
 			greet("Pesho")
 		</code></pre>
 	</section>
+	<section><h3 class="advanced">Example with return value</h3>
+		<dl class="fa">
+			<dt>The function to be decorated has to return value - but as it's executed inside wrapper, we need to explicitly return the value from wrapper. That is because, the wrapper will be our decorated function, after the decoration process.</dt>
+		</dl>
+		<pre><code rel="Python" class="python">
+			def log_decorator(f):
+
+			  def wrapper(a,b):
+			    print("LOG: The function was executed!")
+			    return f(a,b)
+
+			  return wrapper
+
+			@log_decorator
+			def sum(x,y):
+			  return (x+y)
+
+
+			print( sum(2,3) )
+		</code></pre>
+	</section>
+	<section><h3>Readings</h3>
+		<dl class="fa">
+			<dt><a href="https://jeffknupp.com/blog/2013/11/29/improve-your-python-decorators-explained/">Improve Your Python: Decorators Explained</a> by Jeff Knupp</dt>
+		</dl>
+	</section>
 </section>
 
 <section><h1>Lambda expressions</h1></section>
