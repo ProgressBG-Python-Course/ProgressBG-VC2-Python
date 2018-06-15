@@ -79,6 +79,7 @@
 			<dd>a function can be assigned to variable, or stored in other data structure (like list of functions)</dd>
 			<dd>a function can be passed as argument to another function</dd>
 			<dd>a function can be returned as value from another function</dd>
+			<dt class="note">Functions in Python are objects!</dt>
 		</dl>
 	</section>
 	<section><h3>Example - a function can be assigned to variable</h3>
@@ -137,7 +138,7 @@
 	</section>
 	<section><h3>How Decorator Pattern works in Python?</h3>
 		<dl class="fa">
-			<dt><code>decorated = decorator(decorated)</code></dt>
+			<dt><code>decorated = decorator(undecorated)</code></dt>
 		</dl>
 		<pre><code rel="Python" class="python">
 			def stars_decorator(f):
@@ -197,7 +198,7 @@
 			greet()
 		</code></pre>
 	</section>
-	<section><h3>Decorator Pattern in Python - example with arguments</h3>
+	<section><h3 class="advanced">Decorator Pattern in Python - example with arguments</h3>
 		<p>What about if we want the decorated function to take some arguments?</p>
 		<pre><code rel="Python" class="python">
 			def stars_decorator(f):
@@ -218,26 +219,6 @@
 			greet("Pesho")
 		</code></pre>
 	</section>
-	<section><h3>the @ syntactic sugar - example with arguments</h3>
-		<pre><code rel="Python" class="python">
-			def stars_decorator(f):
-				def wrapper(n):
-					print("*" * 50)
-					f(n)
-					print("*" * 50)
-
-				return wrapper
-
-			# let's decorate greet:
-			@stars_decorator
-			def greet(name):
-				print("Howdy {}!".format(name))
-
-
-			# and use it:
-			greet("Pesho")
-		</code></pre>
-	</section>
 </section>
 
 <section><h1>Lambda expressions</h1></section>
@@ -247,7 +228,7 @@
 			<dt>Lambda expressions in Python are used to create short (one-line), anonymous functions.</dt>
 			<dt>Lambda expressions creates a function	that does	not	use	<code>def</code>	and <code>return</code>.</dt>
 			<dt>The "body" of lambda can contain only single expression.</dt>
-			<dt>They are generally	used	with	reduce(	),	filter(	),	and	maps(), or as arguments to other functions.</dt>
+			<dt>They are generally	used	with	reduce(	),	filter(	),	and	maps() - as discussed further, or as arguments to other functions - typical for Functional Programming paradigm.</dt>
 		</dl>
 	</section>
 	<section><h3>Syntax</h3>
@@ -282,7 +263,7 @@
 		</code></pre>
 		<dl class="fa">
 			<dt><em>function</em> - a function definition. Note, that you must not call the function!</dt>
-			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator (will be discussed in further topics)</dt>
+			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator.</dt>
 			<dt><em>Function</em> should return a Boolean value. It is called for each item in the sequence and if it returns False, the item will be filtered</dt>
 		</dl>
 	</section>
@@ -331,7 +312,7 @@
 		</code></pre>
 		<dl class="fa">
 			<dt><em>function</em> - a function definition. Note, that you must not call the function!</dt>
-			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator (will be discussed in further topics). <span>Note, that you can pass multiple <em>iterables</em></span>!</dt>
+			<dt><em>iterable</em> - a sequence (list, tupple, range or string) or container which supports iteration, or an iterator. <span>Note, that you can pass multiple <em>iterables</em></span>!</dt>
 			<dt>map() applies the function to all the elements of the <em>iterable</em>. And returns a new <em>iterable</em> with the elements changed by the <em>function</em>.</dt>
 		</dl>
 	</section>
