@@ -175,6 +175,19 @@
       <dt>to use a built-in (standard) module, you have to import it!</dt>
     </dl>
   </section>
+  <section><h3>Help on Python's built-in modules</h3>
+    <dl class="fa">
+      <dt>Using the <code>help('module_name')</code> function provides useful information about a module.</dt>
+      <dt>If you want to check all built-in modules, just use <code>help("modules")</code></dt>
+      <dt>Most modules have defined the <code>__file__</code> attribute (discussed in next slides), which contain the path where the module is installed</dt>
+      <pre><code rel="Python" class="python">
+        import datetime
+        print( datetime.__file__)
+
+        # /usr/lib/python3.5/datetime.py
+      </code></pre>
+    </dl>
+  </section>
   <section><h3>Python's third-party modules</h3>
     <dl class="fa">
       <dt>The Python Packaging Index <a href="https://pypi.python.org/pypi">PyPI</a>is a public repository of open source licensed packages made available for use by other Python users.</dt>
