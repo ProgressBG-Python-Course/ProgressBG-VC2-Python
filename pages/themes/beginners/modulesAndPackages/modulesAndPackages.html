@@ -148,26 +148,7 @@
       <dt>The installation-dependent default.</dt>
     </dl>
   </section>
-  <section><h3>Relative import</h3>
-    <dl class="fa">
-      <dt>A relative import uses the relative path (starting from the path of the current module) to the desired module to import</dt>
-    </dl>
-  </section>
-  <section><h3>Relative import - example</h3>
-    <pre><code rel="Terminal" class="shell" data-noescape>
-      $ tree my_app
-      my_app/
-      ├── app.py
-      ├── lib
-      │   ├── helper_module.py
-    </code></pre>
-    <pre><code rel="app.py" class="python">
-      import lib.helper_module as hm
 
-      user_name = hm.get_user_name()
-      hm.greet(user_name)
-    </code></pre>
-  </section>
   <section><h3>Python's built-in modules</h3>
     <dl class="fa">
       <dt>or why Python is "Batteries Included"</dt>
@@ -228,7 +209,7 @@
   </section>
   <section><h3>Importing packages</h3>
   	<dl class="fa">
-  		<dt>You can import a package using the same mechanism as importing a module. But do  not forget - a package makes its namespace, as well</dt>
+  		<dt>You can import a package using the same mechanism as importing a module. But do  not forget - a package makes its namespace, as well.</dt>
   	</dl>
   </section>
 </section>
@@ -292,7 +273,14 @@
 </section>
 
 
-
+<section data-min="5"><h1>References</h1></section>
+<section><h2>References</h2>
+  <section><h3>Readings</h3>
+    <dl class="fa">
+      <dt><a href="https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html">The Definitive Guide to Python import Statements</a></dt>
+    </dl>
+  </section>
+</section>
 
 <!-- <section id="hw"><h1>Exercises</h1></section>
 <section><h2>Task1: Task1Title</h2>
