@@ -1,0 +1,8 @@
+add example with map and filters names
+finish install of /home/nemsys/tmp/demo2
+   update in slides with proper pip install requiremnts.txt
+
+
+example in slides for real:
+if __name__ == '__main__':
+  main()
