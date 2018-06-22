@@ -75,8 +75,13 @@
 <section><h2>Data Serialization</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
-      <dt>Data serialization is the concept of converting structured data (lists, dictionaries, objects, etc) into a format that can be stored (for example, in a file) or transmitted and reconstructed later.</dt>
+      <dt>Data serialization is the concept of converting structured data (lists, dictionaries, objects, etc) into a format (byte stream, XML, JSON,... ) that can be stored (for example, in a file) or transmitted and reconstructed later.</dt>
+    </dl>
+  </section>
+  <section><h3>Pickle</h3>
+    <dl class="fa">
       <dt>The native data serialization module for Python is called Pickle.</dt>
+      <dt>It supports <span class="note">"Pickling"</span> - when a Python object hierarchy is converted into a byte stream, and <span class="note">"Unpickling"</span> - the inverse operation, when a byte stream is converted back into an object hierarchy</dt>
       <dt><a href="https://docs.python.org/3/library/pickle.html"> pickle — Python object serialization</a></dt>
     </dl>
   </section>
@@ -143,11 +148,11 @@
       <dd><a href="https://docs.python.org/3/library/json.html">json — JSON encoder and decoder</a></dd>
     </dl>
   </section>
-
   <section><h3>Parse JSON string to Python objects.</h3>
     <dl class="fa">
-      <dt><code>json.loads() function</code></dt>
-      <dt>Deserialize s (a str, bytes or bytearray instance containing a JSON document) to a Python object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dt>
+      <dt><code><a href="https://docs.python.org/3/library/json.html#json.loads">json.loads()</a></code></dt>
+      <dt>Deserialize a string (or bytes or bytearray instance) containing a JSON document into a Python object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dt>
+      <dt>the <span class="note">s</span> in load<span class="note">s</span>() stands for String, not plural.</dt>
     </dl>
   </section>
   <section><h3><code>json.loads()</code> example</h3>
@@ -181,11 +186,10 @@
         print(i)
     </code></pre>
   </section>
-
   <section><h3>Parse JSON file to Python objects.</h3>
     <dl class="fa">
-      <dt><code>json.load() function</code></dt>
-      <dt>Deserialize fp (a .read()-supporting file-like object containing a JSON document) to a Python object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dt>
+      <dt><code><a href="https://docs.python.org/3/library/json.html#json.load">json.load()</a></code></dt>
+      <dt>Deserialize а readable (text or binary) file-like object containing a JSON document to a Python object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dt>
     </dl>
   </section>
   <section><h3><code>json.load()</code> sample file</h3>
@@ -224,9 +228,9 @@
 
   <section><h3>Convert Python objects to JSON</h3>
     <dl class="fa">
-      <dt><code>json.dump() function</code></dt>
-      <dd>Serialize obj as a JSON formatted stream to fp (a .write()-supporting file-like object) using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dd>
-      <dt><code>json.dumps() function</code></dt>
+      <dt><code><a href="https://docs.python.org/3/library/json.html#json.dump">json.dump()</a></code></dt>
+      <dd>Serialize an object as a JSON formatted stream to a .write()-supporting file-like object using next <a href="https://docs.python.org/3/library/json.html#json-to-py-table">conversion table</a>.</dd>
+      <dt><code><a href="https://docs.python.org/3/library/json.html#json.dumps">json.dumps()</a></code></dt>
       <dd>Same as <code>dump()</code>, but serialize to string</dd>
     </dl>
   </section>
@@ -262,8 +266,22 @@
       print('Matrix :', json.dumps(matrix,indent=2))
     </code></pre>
   </section>
-</section>
+  <section><h3><code>json.dump()</code> - indented dict example</h3>
+    <pre><code rel="Python" class="python">
+      import json
 
+      prices = {
+        "apples":2.50,
+        "bananas":1.80,
+        "strawberry": 3.20
+      }
+
+      with open('json_dump.out', 'w+') as fh:
+        fh.write(json.dumps(prices, indent=2))
+
+    </code></pre>
+  </section>
+</section>
 
 <section><h1>Parsing CSV</h1></section>
 <section><h2>Parsing CSV</h2>
@@ -273,6 +291,23 @@
       <dt>the most common import and export format for spreadsheets and databases.</dt>
       <dt>For CSV parsing Python provides the built-in csv module </dt>
       <dd><a href="https://docs.python.org/3/library/csv.html">csv — CSV File Reading and Writing</a></dd>
+    </dl>
+  </section>
+  <section><h3>csv.reader()</h3>
+    <dl class="fa">
+      <dt><code><a href="https://docs.python.org/3/library/csv.html#csv.reader">csv.reader()</a></code></dt>
+      <dd>Return a reader object which will iterate over lines in the given csvfile</dd>
+      <dt>Algorithm:</dt>
+      <dd>Open the file</dd>
+      <dd>Create a CSV reader</dd>
+      <dd>For every line (row) in the file, do something</dd>
+      <dt>If csvfile is a file object, it should be opened with newline=''</dt>
+    </dl>
+  </section>
+  <section><h3>Dialects and Formatting Parameters</h3>
+    <dl class="fa">
+      <dt>All csv readers/writers objects can be given a Dialect and/or Formatting Parameters to tune the CSV parsing</dt>
+      <dt><a href="https://docs.python.org/3/library/csv.html#csv-fmt-params"></a></dt>
     </dl>
   </section>
   <section><h3>Parsing CSV - example 1 - sample_data.csv</h3>
@@ -290,8 +325,9 @@
     <pre><code rel="Python" class="python">
       import csv
 
-      with open('sample_data.csv') as f:
-        # read CSV file:
+      # Open the file
+      with open('sample_data.csv',newline='') as f:
+        # Create a CSV reader:
         f_csv = csv.reader(f)
 
         # skip header row:
@@ -345,7 +381,7 @@
     <p>Print only albums, produced by "Fiction Records" during the period 1980 - 1989 (both included)</p>
     <pre><code rel="Python" class="python" style="font-size: 1em">
       import csv
-      with open('TheCure_Discography.csv') as f:
+      with open('TheCure_Discography.csv',newline='') as f:
           f_csv = csv.reader(f, delimiter=';')
           headers = next(f_csv)
 
@@ -369,8 +405,23 @@
       #['Kiss Me Kiss Me Kiss Me Interview \u200e(LP, Promo)', 'Fiction Records, Polydor', '1987']
       #['Disintegration', 'Fiction Records', '1989']
       #['Entreat', 'Fiction Records, Polydor', '1989']
+    </code></pre>
+  </section>
+  <section><h3>csv.DictReader()</h3>
+    <dl class="fa">
+      <dt><code><a href="https://docs.python.org/3/library/csv.html#csv.DictReader">csv.DictReader()</a></code></dt>
+      <dt>operates like a regular reader but maps the information in each row to an <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict">OrderedDict</a> collection.</dt>
+      <dt>By default, the header row will be used to set keys and other rows - will be set as a values.</dt>
+    </dl>
+  </section>
+  <section><h3>csv.DictReader() - example</h3>
+    <pre><code rel="Python" class="python">
+      import csv
+      with open('sample_data.csv',newline='') as f:
+        reader = csv.DictReader(f, delimiter=',')
 
-
+        for r in reader:
+          print(r)
     </code></pre>
   </section>
 </section>
@@ -386,17 +437,17 @@
     <a href="https://en.wikipedia.org/wiki/XML">XML @wikipedia</a>
   </section>
   <section><h3>Overview</h3>
-    <p>Processing XML in Python:</p>
     <dl class="fa">
       <dt><a href="https://docs.python.org/3/library/xml.html">xml</a></dt>
       <dd>Built-in XML Processing Modules</dd>
       <dt><a href="https://github.com/stchris/untangle">untangle</a></dt>
-      <dd>Converts XML to Python objects</dd>
+      <dd>A third-party module for converting XML to Python objects</dd>
       <dt><a href="https://github.com/martinblech/xmltodict">xmltodict</a></dt>
       <dd>xmltodict is a Python module that makes working with XML feel like you are working with JSON</dd>
     </dl>
+    <p>More readings: <a href="http://docs.python-guide.org/en/latest/scenarios/xml/">XML parsing @The Hitchhiker's Guide to Python</a></p>
   </section>
-  <section><h3>Parsing XML data - example</h3>
+  <section><h3>Parsing XML data - sample data</h3>
     <pre><code rel="sample_data.xml" class="python">
       &lt;data&gt;
           &lt;items&gt;
