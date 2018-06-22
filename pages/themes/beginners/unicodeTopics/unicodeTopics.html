@@ -112,7 +112,7 @@
 		<dl class="fa">
 			<dt>A Unicode string is a sequence of code points, which are numbers from 0 through 0x10FFFF (1,114,111 decimal)</dt>
 			<dt>This sequence needs to be represented as a set of bytes (1 byte can store values from 0 to (2**8)-1) in memory</dt>
-			<dt>The rules for translating a Unicode string into a sequence of bytes are called an <span class="note">encoding</span></dt>
+			<dt class="note">The rules for translating a Unicode string into a sequence of bytes are called an <b>encoding</b></dt>
 			<dt><a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> is a variable width character encoding capable of encoding all valid code points in Unicode using one to four 8-bit bytes</dt>
 			<dd>It's the most popular encoding, used in contemporary software systems.</dd>
 		</dl>
@@ -122,7 +122,7 @@
 <section><h1>Python’s Unicode Support</h1></section>
 <section><h2>Python’s Unicode Support</h2>
 	<section>
-		<p style="font-size: 2em" class="note">Python3 represents strings as Unicode</p>
+		<p style="font-size: 2em" class="note">Python3 represents strings in Unicode</p>
 		<p style="font-size: 1.8em">The default encoding for Python3 source code is <span class="note">UTF-8</span></p>
 	</section>
 	<section>
@@ -166,8 +166,15 @@
 	</section>
 </section>
 
-<section><h1>Convert String to Bytes</h1></section>
-<section><h2>Convert String to Bytes</h2>
+<section><h1>Encode-Decode Diagram</h1></section>
+<section><h2>Encode-Decode Diagram</h2>
+	<section>
+		<a href="images/Python_encode_decode.png"><img src="images/Python_encode_decode.png"></a>
+	</section>
+</section>
+
+<section><h1>encode() - convert String to Bytes</h1></section>
+<section><h2>convert String to Bytes</h2>
 	<section><h3><code>str.encode()</code> - syntax</h3>
 		<pre><code rel="Syntax" class="shell" data-noescape>
 			str.encode(encoding="utf-8", errors="strict")
@@ -178,7 +185,6 @@
 			<dt>List of possible encodings: <a href="https://docs.python.org/3/library/codecs.html#standard-encodings">Standard Encodings</a></dt>
 			<dt>The default for errors is 'strict', meaning that encoding errors raise a UnicodeError.</dt>
 			<dt>More on str.encode(): <a href="https://docs.python.org/3/library/stdtypes.html#str.encode">str.encode @python3 docs</a></dt>
-			<dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
 		</dl>
 	</section>
 	<section><h3><code>str.encode()</code> - example</h3>
@@ -197,10 +203,20 @@
 		</code></pre>
 		<p class="note">Note, that the len() of byte object returns the number of bytes, not the number of characters encoded!</p>
 	</section>
+	<section><h3>The <code>bytes</code> Object and <code>bytestring</code></h3>
+		<dl class="fa">
+			<dt>The <code>bytes</code> object represents an immutable sequence of integers in the range 0 <= x < 256.</dt>
+			<dt>A bytestring is a raw stream of bytes which can be read/write directly into/from memory.</dt>
+			<dt><b><code>bytestring</code> vs <code>str</code> in Python3</b></dt>
+			<dd style="font-size: .8em">a <code class="note">bytestring</code> represents an immutable sequence of bytes, without implying any particular interpretation</dd>
+			<dd style="font-size: .8em"><code class="note">str</code> represents an immutable sequence of unicode codepoints,without implying any particular binary encoding</dd>
+			<dt>More on bytes objects: <a href="https://en.wikiversity.org/wiki/Python_Concepts/Bytes_objects_and_Bytearrays">Bytes objects and Bytearrays</a></dt>
+		</dl>
+	</section>
 </section>
 
-<section><h1>Convert Bytes to String</h1></section>
-<section><h2>Convert Bytes to String</h2>
+<section><h1>decode() - convert Bytes to String</h1></section>
+<section><h2>convert Bytes to String</h2>
 	<section><h3><code>bytes.decode()</code> - syntax</h3>
 		<pre><code rel="Syntax" class="shell" data-noescape>
 			bytes.decode(encoding="utf-8", errors="strict")
@@ -216,18 +232,82 @@
 	</section>
 	<section><h3><code>bytes.decode()</code> - example</h3>
 		<pre><code rel="Python" class="python">
-			str_in_bytes =  b'1\xd0\xb02\xd0\xb13\xd0\xb2'
+			str_in_bytes =  b'123\xd0\xb0\xd0\xb1\xd0\xb2'
 			str_in_utf8 = str_in_bytes.decode()
 
-			print(&quot;String object:&quot;, str_in_utf8)
-			print(&quot;Type: &quot;,type(str_in_utf8) )
-			print(&quot;Length:&quot;,len(str_in_utf8) )
+			print("String object:", str_in_utf8)
+			print("Type: ",type(str_in_utf8) )
+			print("Length:",len(str_in_utf8) )
 
-			#String object: 1а2б3в
-			#Type:  &lt;class 'str'&gt;
-			#Length: 6
+			String object: 123абв
+			Type:  <class 'str'>
+			Length: 6
 		</code></pre>
-		<p class="note">Note, that the len() of byte object returns the number of bytes, not the number of characters encoded!</p>
+		<p class="note">Note, that the len() of sting object returns the number of characters, not the number of bytes decoded!</p>
+	</section>
+</section>
+
+<section><h1>Example use-cases</h1></section>
+<section><h2>Example use-cases</h2>
+	<section><h3>encode/write examples</h3>
+		<dl class="fa">
+			<dt>Next two examples achieve a same goal - to save a Python string into text file, encoded as 'cp1251'</dt>
+			<dt>Thought, the write() method is conciser and clearer, I'm showing the encode() method, as well, as it could be used in other use-cases.</dt>
+		</dl>
+	</section>
+	<section><h3>Write a Python string into file, encoded to cp1251 bytes - using <code>str.encode()</code></h3>
+		<pre><code rel="encode_to_cp1251.py" class="python">
+			string = "АБВ 123 ИЙК ЩЮЯ"
+
+			# open a file handler for writing in binary mode"
+			with open("encode_to_cp1251.txt", "w+b") as fh:
+			  bytes_sequence = string.encode(encoding="cp1251")
+			  fh.write(bytes_sequence)
+
+			# now re-open the file: encode_to_cp1251.txt with encoding cp1251(windows-1251)
+		</code></pre>
+		<p>Usually, for such task, you would like to use the open() in text mode with encoding option, as given in next slide</p>
+	</section>
+	<section><h3>Write a Python string into file, encoded to cp1251 bytes - using <code>open(filename, mode, encoding)</code></h3>
+		<pre><code rel="write_to_cp1251.py" class="python">
+			string = "АБВ 123 ИЙК ЩЮЯ"
+
+			# open a file for writing in text mode, with encoding="cp1251" "
+			with open("write_to_cp1251.txt", "w+", encoding="cp1251") as fh:
+			  fh.write(string)
+
+			# now re-open the file: write_to_cp1251.txt with encoding cp1251(windows-1251)
+		</code></pre>
+	</section>
+
+	<section><h3>decode/read examples</h3>
+		<dl class="fa">
+			<dt>Next two examples achieve a same goal - to read from text file, encoded as 'cp1251'</dt>
+			<dt>Thought, the read() method is conciser and clearer, I'm showing the decode() method, as well, as it could be used in other use-cases.</dt>
+		</dl>
+	</section>
+	<section><h3>Read a cp1251 encoded file into Python string - using <code>str.decode()</code></h3>
+		<pre><code rel="decode_from_windows-1251.py" class="python">
+			win1251file = "encode_to_cp1251.txt"
+
+			# open a file handler for reading in binary mode"
+			with open(win1251file, "r+b") as f:
+			    bytestring = f.read()
+
+			    decoded_string = bytestring.decode(encoding="cp1251")
+			    print(decoded_string)
+
+			    # АБВ 123 ИЙК ЩЮЯ
+		</code></pre>
+	</section>
+	<section><h3>Read a cp1251 encoded file into Python string - using <code>open(filename, mode, encoding)</code></h3>
+		<pre><code rel="read_from_windows-1251.py" class="python">
+			win1251file = "write_to_cp1251.txt"
+
+			# open a file handler for reading in text mode, with encoding="cp1251""
+			with open(win1251file, "r", encoding="cp1251") as f:
+			    print(f.read())
+		</code></pre>
 	</section>
 </section>
 
@@ -240,6 +320,8 @@
 <section><h2>Resources</h2>
 	<section><h3>Texts</h3>
 		<dl class="fa">
+			<dt><a href="https://nedbatchelder.com/text/unipain.html">Pragmatic Unicode</a> by Ned Batchelder</dt>
+			<dt><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)</a></dt>
 			<dt><a href="https://docs.python.org/3.3/howto/unicode.html">Unicode HOWTO @python docs</a></dt>
 		</dl>
 	</section>
