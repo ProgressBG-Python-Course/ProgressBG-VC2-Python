@@ -76,11 +76,6 @@
 
 <section><h1>Unicode Overview</h1></section>
 <section><h2>Unicode Overview</h2>
-	<section><h3>What is an <b>encoding</b></h3>
-		<dl class="fa">
-			<dt class="note">An encoding of a character set is a mapping from characters to numbers.</dt>
-		</dl>
-	</section>
 	<section ><h3>The problem</h3>
 		<dl class="fa">
 			<dt>In the beginning (1963), there was only <a href="https://www.asciitable.com/">ASCII</a>. After that, a bunch of character encodings was used:</dt>
@@ -94,9 +89,10 @@
 			<dd>in Windows-1252, the code '209' == 'Ñ'</dd>
 		</dl>
 	</section>
-	<section><h3>The Solution</h3>
+	<section><h3>Unicode - The Solution</h3>
 		<dl class="fa">
-			<dt>Unicode encompasses virtually all characters used widely in computers today. It is capable of addressing more than 1.1 million code points.</dt>
+			<dt>Unicode encompasses virtually all characters used widely in computers today. As of version 11.0, Unicode contains a repertoire of over 137,000 characters covering 146 modern and historic scripts, as well as multiple symbol sets. Even <a href="https://en.wikipedia.org/wiki/Emoji#Unicode_blocks">Emoji</a>!</dt>
+			<dt><a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">List of Unicode characters</a> @wikipedia</dt>
 		</dl>
 	</section>
 	<section>
@@ -135,8 +131,8 @@
 	</section>
 	<section><h3><code>ord()</code> and <code>chr()</code> functions</h3>
 		<dl class="fa">
-			<dt><code>ord(<em>char</em>)</code> - return an integer representing the Unicode code point of <em>char</em> given.</dt>
-			<dt><code>chr(<em>i</em>)</code> - return the string representing a character whose Unicode code point is the integer i</dt>
+			<dt><code><a href="https://docs.python.org/3/library/functions.html#ord">ord(char)</a></code> - return an integer representing the Unicode code point of <em>char</em> given.</dt>
+			<dt><code><a href="https://docs.python.org/3/library/functions.html#chr">chr(i)</a></code> - return the string representing a character whose Unicode code point is the integer i</dt>
 		</dl>
 		<pre><code rel="Python" class="python">
 			print( ord('я') )
@@ -166,8 +162,8 @@
 	</section>
 </section>
 
-<section><h1>Encode-Decode Diagram</h1></section>
-<section><h2>Encode-Decode Diagram</h2>
+<section><h1>Encode-Decode</h1></section>
+<section><h2>Encode-Decode</h2>
 	<section>
 		<a href="images/Python_encode_decode.png"><img src="images/Python_encode_decode.png"></a>
 	</section>
