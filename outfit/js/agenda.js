@@ -57,7 +57,7 @@ function calcTotalDays(){
 
         // do not round:
         current_days = current_hours / hours_per_day;
-        hours_nodes[i].title = "day:" + current_days;
+        hours_nodes[i].title = `hours: ${current_hours}; day:${current_days}`;
     };
 }
 function showHideAll(  ){

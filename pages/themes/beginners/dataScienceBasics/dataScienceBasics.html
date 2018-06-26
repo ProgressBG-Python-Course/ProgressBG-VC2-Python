@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <!-- css & themes include -->
   <link rel="stylesheet" href="/ProgressBG-VC2-Python/lib/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/dark.css" id="theme">
+  <link rel="stylesheet" href="/ProgressBG-VC2-Python/outfit/css/themes/light.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
@@ -169,6 +169,15 @@
 
 <section><h1>iPython and Jupiter Notebook</h1></section>
 <section><h2>iPython and Jupiter Notebook</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>A client-server application, which allows you to edit and run your notebooks via a web browser</dt>
+      <dt>A <em>notebook</em> is an application which consists of code and text</dt>
+      <dt>In the end of 2014, <a href="http://jupyter.org/">Project Jupyter</a> started as a spin-off project from <a href="https://ipython.org/">IPython</a></dt>
+      <dt>Now, IPython is the name of the Python's Jupyter backend (kernel)</dt>
+      <dt class="note">Live Demo: <a href="https://drive.google.com/file/d/138sRdZKKiUIPK-6Xw6ai7gosTKvghUQy/view?usp=sharing">Parsing JSON with pandas</a> on <a href="https://colab.research.google.com">Google Colaboratory</a></dt>
+    </dl>
+  </section>
   <section><h3>iPython</h3>
     <dl class="fa">
       <dt>IPython - an enhanced Interactive Python, which provides:</dt>
@@ -188,11 +197,6 @@
       $ pipenv install ipython
     </code></pre>
   </section>
-  <section><h3>Jupyter Notebook</h3>
-    <dl class="fa">
-      <dt>Live Demo on <a href="https://colab.research.google.com">Google Colaboratory</a></dt>
-    </dl>
-  </section>
   <section><h3>Jupyter Notebook - install</h3>
     <pre><code rel="Terminal" class="shell" data-noescape>
       #install jupyter with pip3
@@ -201,6 +205,18 @@
       #install jupyter on pipenv
       $ pipenv install jupyter
     </code></pre>
+  </section>
+  <section><h3>Create a simple Jupyter Notebook</h3>
+    <dl class="fa">
+      <dt>Start the server:</dt>
+      <pre style="width: 100%"><code rel="Terminal" class="bash">
+        # navigate to the folder you want to be served:
+        cd jupyter_demos
+        # start the server:
+        jupyter notebook
+      </code></pre>
+      <dt>Now you can create from the browser your notebooks</dt>
+    </dl>
   </section>
 </section>
 
@@ -214,7 +230,7 @@
       <dd>large collection of high-level mathematical functions to operate on these arrays</dd>
       <dt>Written mainly in C langualge</dt>
       <dt>numpy arrays and operations are much faster than Python's list equivalents.</dt>
-      <dt>pandas is built on top of numpy</dt>
+      <dt class="note">pandas is built on top of numpy</dt>
     </dl>
   </section>
   <section><h3>data types</h3>
