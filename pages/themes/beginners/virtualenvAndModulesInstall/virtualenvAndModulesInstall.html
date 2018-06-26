@@ -244,6 +244,33 @@
 		<p>Or type <kbd>ctrl-d</kbd></p>
 		<p>Or close your terminal window :)</p>
 	</section>
+	<section><h3 class="advanced">Let pipenv install Python distribution</h3>
+		<dl class="fa">
+			<dt>You can create a virtual environment with any Python version, without the need to have it system installed</dt>
+			<dt>Pipenv can install any Python version with the use of pyenv, so you have to install it.</dt>
+			<dd><a href="https://github.com/pyenv/pyenv#installation">pyenv installation</a></dd>
+		</dl>
+		<pre><code rel="Terminal" class="bash" data-noescape>
+			# install pyenv
+			curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+
+			# add it to path
+			echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
+			echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+		</code></pre>
+	</section>
+	<section><h3>Let pipenv install Python distribution</h3>
+		<dl class="fa">
+			<dt class="note">Install <a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems">the Requirements</a>!</dt>
+			<dt>Now, you can make pipenv to create a virtualenv with any Python version:</dt>
+			<pre><code rel="Terminal" class="bash" data-noescape>
+				#Create a new project using Python 3.6, specifically:
+				$ pipenv --python 3.6
+
+				# you'll be asked by pipenv if you want it to install the Python 3.6, if it is not inyour system
+			</code></pre>
+		</dl>
+	</section>
 	<section><h3>Useful video</h3>
 		<p><a href="https://www.youtube.com/watch?v=tRmmjlVHzno">Intro to Pipenv - A Package Manager for Python</a> by <a href="https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ">Pretty Printed</a></p>
 		<iframe src="https://www.youtube.com/embed/tRmmjlVHzno" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -343,23 +370,8 @@
 	<section><h3>All the steps in a gif</h3>
 		<a href="images/pipenv/matplotlib_in_pipenv_croped.gif"><img src="images/pipenv/matplotlib_in_pipenv_croped.gif"></a>
 	</section>
-	<section><h3 class="advanced">Let pipenv install Python distribution</h3>
-		<dl class="fa">
-			<dt>You can create a virtual environment with any Python version, without the need to have it system installed</dt>
-			<dt>Pipenv can install any Python version with the use of pyenv</dt>
-			<dd><a href="https://github.com/pyenv/pyenv#installation">pyenv installation</a></dd>
-		</dl>
-		<pre><code rel="Terminal" class="bash" data-noescape>
-			# install pyenv
-			curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-
-			# add it to path
-			echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile
-			echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
-		</code></pre>
-		<dt class="note">And install <a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems">the Requirements</a>!</dt>
-	</section>
 </section>
+
 
 <section><h1>pipenv with VS Code</h1></section>
 <section><h2>pipenv with VS Code</h2>
