@@ -214,6 +214,16 @@
   		        └── __init__.py
   	</code></pre>
   </section>
+  <section><h3>The __pycahce__ folder and .pyc files</h3>
+    <dl class="fa">
+      <dt>To speed up loading modules, Python caches the compiled version of each module in the automatically created __pycache__ directory under the name module.version.pyc</dt>
+      <dt>If you really need to tell python not to generate the compiled versions, you can set the <a href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHONDONTWRITEBYTECODE">PYTHONDONTWRITEBYTECODE</a> env. var.</dt>
+    </dl>
+  </section>
+  <section><h3>Compile and decompile pyc files</h3>
+    <dt>To compile: </dt>
+    <dt>To decompile: Uncompyle6 works for Python 3 and 2.7 (more recent, aiming to unify earlier forks and focusing on automated testing). This is now probably the best option. (from <a href="https://stackoverflow.com/questions/5287253/is-it-possible-to-decompile-a-compiled-pyc-file-into-a-py-file#">stackoverflow theme</a></dt>
+  </section>
   <section><h3>Importing packages</h3>
   	<dl class="fa">
   		<dt>You can import a package using the same mechanism as importing a module. But do  not forget - a package makes its namespace, as well.</dt>
