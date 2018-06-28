@@ -105,14 +105,17 @@
 	<section><h3>SimpleCompanyDB - the Model</h3>
 		<dl class="fa">
 			<dt>In next slides, in order to illustrate SQLAlchemy, I'll use a very simple model: SimpleCompanyDB</dt>
-			<dt>You can download the MySQL dump: <a href="examples/slides/real/SimpleCompanyDB/model/SimpleCompanyDB_dump.sql"></a></dt>
+			<dt>You can download the MySQL dump: <a href="examples/slides/real/SimpleCompanyDB/model/SimpleCompanyDB_dump.sql">SimpleCompanyDB_dump</a></dt>
 		</dl>
 		<a href="examples/slides/real/SimpleCompanyDB/model/model.png"><img src="examples/slides/real/SimpleCompanyDB/model/model.png"></a>
 	</section>
 	<section><h3>SimpleCompanyDB - the data</h3>
-		<p>Next sample data are pre-populated into the database:</p>
+		<dl class="fa">
+			<dt>DB engine used is <a href="https://mariadb.org/">MariaDB</a></dt>
+			<dt>Next sample data are pre-populated into the database:</dt>
+		</dl>
 		<pre><code rel="SQL" class="sql" data-noescape style="font-size: .9em; height: 70vh;">
-			mariadb root@localhost:SimpleCompanyDB> SELECT * from company;
+			 root@localhost:SimpleCompanyDB> SELECT * from company;
 			+--------------+----------------+
 			|   company_id | company_name   |
 			|--------------+----------------|
@@ -303,9 +306,24 @@
 </section> -->
 
 
-<section><h1>Demo example with SQLAlchemy and SQLite3</h1></section>
+<!-- <section><h1>Demo example with SQLAlchemy and SQLite3</h1></section>
 <section><h2>Demo example with SQLAlchemy and SQLite3</h2>
 	<section><h3>___MainSectionSubTitle___</h3></section>
+</section> -->
+
+<section data-min="20"><h1>Pandas and DB</h1></section>
+<section><h2>Pandas and DB</h2>
+  <section><h3>DataFrame from MySQL table</h3>
+    <pre><code rel="Python" class="python">
+      import MySQLdb
+      mysql_cn= MySQLdb.connect(host='myhost',
+                      port=3306,user='myusername', passwd='mypassword',
+                      db='information_schema')
+      df_mysql = pd.read_sql('select * from VIEWS;', con=mysql_cn)
+      print 'loaded dataframe from MySQL. records:', len(df_mysql)
+      mysql_cn.close()
+    </code></pre>
+  </section>
 </section>
 
 
@@ -316,6 +334,7 @@
 			<dt><a href="https://www.python.org/dev/peps/pep-0249/">PEP 249 -- Python Database API Specification v2.0</a></dt>
 			<dt><a href="http://docs.sqlalchemy.org/en/latest/orm/tutorial.html">Object Relational Tutoria</a> <a href="http://docs.sqlalchemy.org/en/latest/">@docs.sqlalchemy.org</a></dt>
 			<dt><a href="http://docs.sqlalchemy.org/en/latest/core/reflection.html">Reflecting Database Objects</a></dt>
+			<dt><a href="https://www.pythonsheets.com/notes/python-sqlalchemy.html">Python SQLAlchemy Cheatsheet</a></dt>
 		</dl>
 	</section>
 </section>
