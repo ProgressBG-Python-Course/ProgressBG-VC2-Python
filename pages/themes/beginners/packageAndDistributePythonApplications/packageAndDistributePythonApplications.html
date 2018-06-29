@@ -72,30 +72,70 @@
 </section>
 
 
+<section data-min="5"><h1>To "freeze" or to "package"?</h1></section>
+<section><h2>To "freeze" or to "package"?</h2>
+  <section><h3></h3>
+    	<dl class="fa">
+    		<dt><span class="note">Packaging</span> your code is for distributing libraries or tools to other developers.</dt>
+    		<dt><span class="note">Freezing</span> the code is creating a single-file executable file to distribute to end-users, that contains all of your application code as well as the Python interpreter.</dt>
+    	</dl>
+    </section>
+</section>
+
 <section data-min="20"><h1>Distributing your Python App/Libs</h1></section>
 <section><h2>Distributing your Python App/Libs</h2>
-  <section><h3>Overview</h3>
-
-  </section>
-  <section><h3>the pip way: requirements.txt</h3></section>
   <section><h3>the pip way: requirements.txt</h3>
+  	<dl class="fa">
+  		<dt>Requirements files are files containing a list of items to be installed using pip install</dt>
+  	</dl>
+  </section>
+  <section>
   	<dl class="fa">
   		<dt>Tools:</dt>
   		<dd><a href="https://github.com/jazzband/pip-tools">pip-tools</a> - A set of tools to keep your pinned Python dependencies fresh.</dd>
   	</dl>
   </section>
-  <section><h3>the pipenv way: Pipfile && Pipfile.lock</h3></section>
+  <section><h3>the pipenv way: Pipfile && Pipfile.lock</h3>
+  	<dl class="fa">
+  		<dt>Managing a requirements.txt file can be problematic, so Pipenv uses Pipfile and Pipfile.lock to separate abstract dependency declarations from the last tested combination</dt>
+  		<dt><a href="https://github.com/pypa/pipfile">github.com/pypa/pipfile</a></dt>
+  		<dt><a href="https://www.mattlayman.com/2017/using-pipfile-for-fun-and-profit.html">Using Pipfile for fun and profit</a> by <a href="https://www.mattlayman.com/">Matt Layman</a></dt>
+  	</dl>
+  </section>
+  <section><h3>pipfile</h3>
+  	<dl class="fa">
+  		<dt>Pipfiles contain information about the dependencies of your project, and supercede the requirements.txt</dt>
+  	</dl>
+  </section>
+  <section><h3>pipfile.lock</h3>
+  	<dl class="fa">
+  		<dt>The package name and its version, as well as the list of its dependencies, can be frozen by updating the Pipfile.lock</dt>
+  	</dl>
+  	<pre><code rel="Terminal" class="bash" data-noescape>
+  		pipenv lock
+  	</code></pre>
+  </section>
   <section><h3>Live demo</h3></section>
 </section>
 
 
-<section data-min="20"><h1>creating a single-file executable of your Python App</h1></section>
-<section><h2>creating a single-file executable of your Python App</h2>
-  <section><h3>Overview</h3>
-
-  </section>
+<section data-min="20"><h1>Creating a single-file executables</h1></section>
+<section><h2>Creating a single-file executables</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt><a href="http://docs.python-guide.org/en/latest/shipping/freezing/#freezing-your-code-ref">Freezing Your Code</a> @The Hitchhiker's Guide to Python</dt>
+		</dl>
+	</section>
   <section><h3>using pyInstaller to create Windows executable and Linux packages</h3></section>
-  <section><h3>Live demo</h3></section>
+</section>
+
+<section data-min="10"><h1>Creating Built Distributions</h1></section>
+<section><h2>Creating Built Distributions</h2>
+  <section><h3>Overview</h3>
+  	<dl class="fa">
+  		<dt><a href="https://docs.python.org/3/distutils/builtdist.html#creating-built-distributions">Creating Built Distributions</a> @python docs</dt>
+  	</dl>
+  </section>
 </section>
 
 <section data-min="5"><h1>Resources</h1></section>

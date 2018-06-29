@@ -92,13 +92,21 @@
 	</section>
 </section>
 
-<section><h1>Creating a Simple Django App</h1></section>
-<section><h2>Simple Crawler App</h2>
+<section><h1>Installation</h1></section>
+<section><h2>Installation</h2>
 	<section><h3>Prerequisites</h3>
 		<dl class="fa">
 			<dt>Python > 3.4</dt>
 			<dt>Virtual environment: pipenv or any other</dt>
 			<dt>Optional: <a href="https://git-scm.com/download/win">git</a> and <a href="https://github.com/">github</a> to manage revision and share your app</dt>
+		</dl>
+	</section>
+	<section><h3>Official releases</h3>
+		<pre><code rel="Terminal" class="bash" data-noescape>
+			pipenv install Django
+		</code></pre>
+		<dl class="fa">
+			<dt><a href="https://docs.djangoproject.com/en/2.0/topics/install/#install-the-django-code">Install the Django code</a></dt>
 		</dl>
 	</section>
 </section>
@@ -239,7 +247,7 @@
 		<dl class="fa">
 			<dt>SQLite is an in-process library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine</dt>
 			<dt>SQLite is in the public domain and is thus free for use for any purpose, commercial or private.</dt>
-			<dt class="note">SQLite is included in Python, so you won’t need to install anything else to support your database. When starting your first real project, however, you may want to use a more scalable database like PostgreSQL</dt>
+			<dt class="note">SQLite is included in Python, so you would not need to install anything else to support your database. When starting your first real project, however, you may want to use a more scalable database like PostgreSQL</dt>
 		</dl>
 	</section>
 	<section><h3>Setup the ToDoApp SQLite DB</h3>
@@ -613,6 +621,14 @@
 
 <section data-min="10"><h1>Flask</h1></section>
 <section><h2>Flask</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt><a href="http://flask.pocoo.org/">Flask</a> - the Python micro framework for building web applications</dt>
+			<dt>It is a lightweight WSGI web application framework</dt>
+			<dt>Less opinionated than Django - Flask offers suggestions, but doesn't enforce any dependencies or project layout</dt>
+			<dt>There are many extensions provided by the community that make adding new functionality easy</dt>
+		</dl>
+	</section>
   <section><h3>Creating a Todo List App With Flask and Flask-SQLAlchemy</h3>
   	<a href="https://prettyprinted.com/blog/1128685/creatign-todo-list-app-with-flask">the tutorial && code</a>
   	<iframe width="640" height="360" src="https://www.youtube.com/embed/4kD-GRF5VPs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

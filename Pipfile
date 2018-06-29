@@ -12,6 +12,7 @@ aiohttp = "*"
 asyncio = "*"
 sqlalchemy = "*"
 pymysql = "*"
+django = "*"
 
 [requires]
 python_version = "3.5"
